@@ -55,7 +55,7 @@
 </div>
 
 <div class="new_ex">
-<button type="button" onclick = "location.href= '../getUserExhibitionList'" ><span style="color:#7832f7">+</span>more</button>
+<button type="button" class="newEx_btn" onclick = "location.href= '../getUserExhibitionList'" ><span style="color:#7832f7">+</span>more</button>
 </div>
 
 <!-- <div class="maintext">

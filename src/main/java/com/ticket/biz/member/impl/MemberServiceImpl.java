@@ -17,6 +17,19 @@ public class MemberServiceImpl implements MemberService {
 	@Autowired
 	private MemberDAO memberDAO;
 
+	//패스워드찾기
+    @Override
+    public int pwChk(Map<String, Object> param) {
+        return memberDAO.pwChk(param);
+    }
+    
+	   //아이디 중복체크
+    @Override
+    public int idChk(Map<String, Object> param) {
+//       System.out.println(param);
+        return memberDAO.idChk(param);
+    }
+    
 	@Override
 	public MemberVO loginCheck(MemberVO vo) {
 		return memberDAO.loginCheck(vo);
@@ -50,7 +63,7 @@ public class MemberServiceImpl implements MemberService {
 
 	   @Override
 	   public MemberVO getMember(MemberVO vo) {
-	      System.out.println(vo.getMb_id());
+//	      System.out.println(vo.getMb_id());
 	      return memberDAO.getMember(vo);
 	   }
 

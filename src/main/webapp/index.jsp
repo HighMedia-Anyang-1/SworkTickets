@@ -5,9 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<!-- header -->
+
 <%@ include file="header.jsp"%>
-<!-- header end -->
+
 </head>
 <body class="d-flex flex-column min-vh-100">
 <!-- <img class="picture" src="./images/main_image.png" /> -->
@@ -72,6 +72,7 @@ aa
 <!-- <a href="/MyCoupon">- 내 쿠폰함</a><br> -->
 <!-- <a href="/getOneList">- 1대1문의</a><br> -->
 <!-- <a href="login.jsp">- 로그인</a><br> -->
+<a href="reviewwrite.jsp">후기</a>
 <br><br>
 관리자 메뉴 
 <br><br>

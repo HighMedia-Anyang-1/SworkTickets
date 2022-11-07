@@ -12,8 +12,7 @@
 		<h1>전시 등록</h1>
 	</div>
 	<div class="container-fluid">
-		<form action="insertExhibition" method="post"
-			enctype="multipart/form-data">
+		<form action="insertExhibition" method="post" enctype="multipart/form-data">
 			<div class="input-group mb-3">
 				<div class="input-group-prepend">
 					<label for="exh_title" class="input-group-text">전시명</label>
@@ -51,7 +50,7 @@
 					<label for="exh_location" class="input-group-text">위치</label>
 				</div>
 				<input type="text" class="form-control innm" id="exh_location"
-					name="exh_location" placeholder="주소를 검색해주세요."> 
+					name="exh_location" placeholder="주소검색 버튼으로 검색하세요."> 
 					<input type="button" onclick="sample5_execDaumPostcode()" value="주소 검색"><br>
 			</div>
 			
@@ -68,7 +67,6 @@
 				</div>
 				<input type="text" class="form-control innm" id="exh_hall"
 					name="exh_hall" placeholder="상세주소를 입력해주세요.">
-				<%--          <input type="text" class="form-control innm" name="writer" value="<%=session.getAttribute("userName").toString() %>" readonly> --%>
 			</div>
 
 <!-- 			<input type="hidden" id="exh_place_x" name="exh_place_x"> -->
@@ -90,7 +88,7 @@
 					<label for="exh_thumbnail" class="input-group-text">썸네일</label>
 				</div>
 				<input type="file" class="form-control innm" id="exh_thumbnail"
-					name="exh_thumbnail">
+					name="uploadFile_thumb">
 			</div>
 
 			<div class="input-group mb-3">
@@ -98,15 +96,14 @@
 					<label for="exh_banne" class="input-group-text">배너</label>
 				</div>
 				<input type="file" class="form-control innm" id="exh_banne"
-					name="exh_banne">
+					name="uploadFile_banne">
 			</div>
 
 			<div class="input-group mb-3">
 				<div class="input-group-prepend">
 					<label for="exh_img" class="input-group-text">이미지</label>
 				</div>
-				<input type="file" class="form-control innm" id="exh_img"
-					name="exh_img">
+				<input type="file" multiple="multiple" class="form-control innm" id="exh_img" name="uploadFile">
 			</div>
 
 			<div class="input-group mb-3">
@@ -122,7 +119,7 @@
 					<label for="exh_time" class="input-group-text">관람시간</label>
 				</div>
 				<input type="text" class="form-control innm" id="exh_time"
-					name="exh_time">
+					name="exh_time" value="오전 10시 ~ 오후 8시 (입장마감: 오후 7시)">
 			</div>
 
 			<div class="input-group mb-3">
@@ -130,10 +127,10 @@
 					<label for="exh_rating" class="input-group-text">관람등급</label>
 				</div>
 				<select id="exh_rating" name="exh_rating">
-					<option value="">전체관람가</option>
-					<option value="1">만 8세 이상</option>
-					<option value="2">만 15세 이상</option>
-					<option value="3">만 18세 이상</option>
+					<option>전체관람가</option>
+					<option>만 8세 이상</option>
+					<option>만 15세 이상</option>
+					<option>만 18세 이상</option>
 				</select> 
 			</div>
 
@@ -150,36 +147,72 @@
 					<label for="exh_local_name" class="input-group-text">지역명</label>
 				</div>
 				<select id="exh_local_name" name="exh_local_name">
-					<option value="">지역을 선택해주세요</option>
-					<option value="1">서울</option>
-					<option value="2">경기/인천</option>
-					<option value="3">충청/강원</option>
-					<option value="4">대구/경북</option>
-					<option value="5">부산/경남</option>
-					<option value="6">광주/전라</option>
-					<option value="7">제주</option>
+<!-- 					<option value="1">서울</option> -->
+<!-- 					<option value="2">경기/인천</option> -->
+<!-- 					<option value="3">충청/강원</option> -->
+<!-- 					<option value="4">대구/경북</option> -->
+<!-- 					<option value="5">부산/경남</option> -->
+<!-- 					<option value="6">광주/전라</option> -->
+<!-- 					<option value="7">제주</option> -->
+					<option>서울</option>
+					<option>경기/인천</option>
+					<option>충청/강원</option>
+					<option>대구/경북</option>
+					<option>부산/경남</option>
+					<option>광주/전라</option>
+					<option>제주</option>
 				</select> 
 			</div>
 
 			<div class="input-group mb-3">
 				<div class="input-group-prepend">
-					<label for="exh_common_no" class="input-group-text">공통 내용
-						선택</label>
+					<label for="exh_cs_phone" class="input-group-text">고객문의처</label>
 				</div>
-				<input type="text" class="form-control innm" id="exh_common_no"
-					name="exh_common_no">
+				<input type="text" class="form-control innm" id="exh_cs_phone"
+					name="exh_cs_phone" value="0505-16887-05361">
+			</div>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<label for="exh_fee" class="input-group-text">예매수수료</label>
+				</div>
+				<input type="text" class="form-control innm" id="exh_fee"
+					name="exh_fee" value="0">
+			</div>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<label for="exh_shipping_info" class="input-group-text">발권정보</label>
+				</div>
+				<input type="text" class="form-control innm" id="exh_shipping_info" name="exh_shipping_info" value="현장수령">
+			</div>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<label for="exh_period_use" class="input-group-text">유효기간/이용조건</label>
+				</div>
+				<input type="text" class="form-control innm" id="exh_period_use"
+					name="exh_period_use" value="전시 기간내에 1일동안만 이용가능합니다.">
+			</div>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<label for="exh_refund_info" class="input-group-text">취소/환불안내</label>
+				</div>
+				<textarea class="form-control" rows="10" id="exh_refund_info"
+					id="exh_refund_info" name="exh_refund_info">
+취소수수료 없음
+마이페이지 -> 나의 결제내역에서 취소 가능합니다.
+문의사항은 고객문의처로 문의바랍니다.
+				</textarea>
 			</div>
 
 			<div id="footer">
 				<button id="conComplete" type="submit" class="btn btn-primary">등록하기</button>
-				<button id="conList" type="button" class="btn btn-primary">글목록</button>
+<!-- 				<button id="conList" type="button" class="btn btn-primary">글목록</button> -->
 			</div>
 		</form>
 	</div>
-
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=75fb178f353ce628ee79e97732a582fc&libraries=services"></script>
 <script>
+console.log("${exhibition.exh_title}");
     var mapContainer = document.getElementById('map'), // 지도를 표시할 div
         mapOption = {
             center: new daum.maps.LatLng(37.537187, 127.005476), // 지도의 중심좌표

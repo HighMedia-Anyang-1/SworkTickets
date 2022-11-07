@@ -28,7 +28,7 @@
 	
 	<select id="getAllPayList" resultType="pay">
 		SELECT *
-		FROM PAY P
+		FROM PAY P, EXHIBITION E
 		WHERE 1=1 
 		<if test="searchCondition == 'BUYER' "> AND buyer LIKE CONCAT('%', #{searchKeyword},'%')</if>
 		<if test="searchCondition == 'BUYER_TEL' "> AND buyer_tel LIKE CONCAT('%', #{searchKeyword},'%')</if>
@@ -62,7 +62,7 @@
 		GROUP BY e.exh_no
 		ORDER BY
 		p.exh_no DESC
-		LIMIT 5;
+		LIMIT 3;
 
 	</select>
 
@@ -74,7 +74,7 @@
 		GROUP BY e.exh_no
 		ORDER BY
 		p.exh_no DESC
-		LIMIT 5
+		LIMIT 3
 		)a;
 	</select>
 

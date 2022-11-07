@@ -65,17 +65,8 @@
 		SET MB_PW =#{mb_pw}
 		WHERE MB_ID=#{mb_id}
 	</update>
-<<<<<<< HEAD
-	<!-- 	아이디 중복체크 -->
-	<select id="idChk" resultType="int">
-		SELECT COUNT(MB_ID) FROM MEMBER WHERE MB_ID = #{mb_id}
-	</select>
-	
-=======
-	
 	   <!--    아이디 중복체크 -->
    <select id="idChk" resultType="int">
       SELECT COUNT(MB_ID) FROM MEMBER WHERE MB_ID = #{mb_id}
    </select>
->>>>>>> origin/master
 </mapper>

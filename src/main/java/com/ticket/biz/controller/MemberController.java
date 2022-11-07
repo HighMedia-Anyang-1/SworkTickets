@@ -31,7 +31,6 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 
-<<<<<<< HEAD
     // 아이디 중복 검사
     @ResponseBody
     @RequestMapping(value = "/idChk", method = RequestMethod.POST)
@@ -42,15 +41,6 @@ public class MemberController {
         
     }
     
-=======
-	// 아이디 중복 검사
-	@ResponseBody
-	@RequestMapping(value = "/idChk", method = RequestMethod.POST)
-	public int idChk(@RequestParam Map<String, Object> param) {
-//        int result = memberService.idChk(param);
-		return memberService.idChk(param);
-
-	}
 	// 회원 수정 비밀번호 확인
 //	@ResponseBody
 //	@RequestMapping(value = "/pwChk", method = RequestMethod.POST)
@@ -58,7 +48,6 @@ public class MemberController {
 //		return memberService.pwChk(param);
 //	}
 
->>>>>>> origin/master
 	// 회원 검색
 	@ModelAttribute("conditionMap")
 	public Map<String, String> searchConditionMap() {

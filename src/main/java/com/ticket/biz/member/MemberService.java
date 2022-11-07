@@ -42,7 +42,5 @@ public interface MemberService {
 
 	// 비번 변경
 	int change(MemberVO vo);
-	// 아이디 중복체크
-	int idChk(Map<String, Object> param);
 
 }

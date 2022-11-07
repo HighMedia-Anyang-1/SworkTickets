@@ -74,12 +74,4 @@ public class MemberDAO {
 		return mybatis.update("MemberDAO.change", vo);
 	}
 
-<<<<<<< HEAD
-	// 아이디 중복체크
-	public int idChk(Map<String, Object> param) {
-		
-		return mybatis.selectOne("MemberDAO.idChk", param);
-	}
-=======
->>>>>>> origin/master
 }

@@ -81,11 +81,4 @@ public class MemberServiceImpl implements MemberService {
 	public int change(MemberVO vo) {
 		return memberDAO.change(vo);
 	}
-	//아이디 중복체크
-    @Override
-    public int idChk(Map<String, Object> param) {
-    	System.out.println(param);
-        return memberDAO.idChk(param);
-    }
-
 }

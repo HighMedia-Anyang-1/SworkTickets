@@ -36,6 +36,21 @@
 	color: #fff;
 }
 
+.btn-delete {
+	margin-top:20px;
+	margin-bottom:50px;
+	border: 1px solid red;
+	border-radius: 0px;
+	background-color: #fff;
+	width: 100px;
+	color: red;
+}
+
+.btn-delete:hover {
+	background-color: red;
+	color: #fff;
+}
+
 .container-fluid {
 	padding: 0 10% 0 10%;
 }
@@ -104,4 +119,12 @@
 
 #btnBox>a:hover{
 	color: #7832f7;
+}
+
+#footer{
+	margin: auto;
+}
+
+.btnBox_parent{
+	margin-bottom:20px;
 }

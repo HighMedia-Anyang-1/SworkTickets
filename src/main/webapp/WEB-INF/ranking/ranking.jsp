@@ -61,6 +61,7 @@
 						<a href="getUserExhibition?exh_no=${getGoodList.exh_no}">
 						${status.count} 
 							${getGoodList.exh_title}</a> ${getGoodList.rank_cnt }<br>
+							 ${getGoodList.exh_img}
 					</div></div>
 				</c:forEach>
 			</div>

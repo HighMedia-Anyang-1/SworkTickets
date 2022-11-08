@@ -17,7 +17,7 @@
 <style>
 </style>
 <body>
-	<div class="jumbotron">
+	<div class="board">
 		<h1>관리자 전시 목록</h1>
 	</div>
 	<div class="table-responsive">
@@ -40,6 +40,7 @@
 					<tr onclick="selTr(${exhibition.exh_no},${paging.nowPageBtn})"
 						style="cursor: pointer;">
 						<td class="tdCenter">${exhibition.exh_no}</td>
+						<td class="tdCenter">${exhibition.exh_img}</td>
 						<td class="tdCenter">${exhibition.exh_title}</td>
 						<td class="tdCenter"><fmt:formatNumber
 								value="${exhibition.exh_price}" groupingUsed="true" />원</td>

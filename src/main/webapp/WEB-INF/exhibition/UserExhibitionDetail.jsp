@@ -6,7 +6,7 @@
 </head>
 <body>
 <br><br><br>
-<div class="jumbotron">
+<div class="board">
         <h1>${exhibition.exh_title}</h1>
         <h5>${exhibition.exh_st_date} ~ ${exhibition.exh_end_date}</h5>
         <h6>${exhibition.exh_hall}</h6>

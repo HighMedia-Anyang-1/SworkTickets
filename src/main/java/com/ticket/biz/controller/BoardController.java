@@ -57,6 +57,8 @@ public class BoardController {
 		return "redirect:getBoardList";
 		
 	}
+	
+	
 
 	//"uploadFile" 추가시 
 //	@PostMapping(value = "/insertBoard")

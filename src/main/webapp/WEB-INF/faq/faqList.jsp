@@ -51,11 +51,11 @@ function f_write(val){
 }
 </script>
 <body>
-	<div class="jumbotron">
-		<h1>FAQ!!!!</h1>
+	<div class="board">
+		<h1>FAQ</h1>
 	</div>
 	<%-- <%@ include file="../../menu.jsp" %> --%>
-	<nav id="searchNav" class="navbar navbar-expand-sm navbar-dark">
+	<nav id="searchNav" class="sub_title">
 		<form class="form-inline" action="getOneList.do" method="post">
 			<select class="form-control" id="sel1" name="searchCondition"
 				style="display: inline-block !important; margin-right: 10px;">
@@ -73,7 +73,8 @@ function f_write(val){
 		<table class="table table-hover">
 			<thead class="btn-primary">
 				<tr>
-				
+					
+					<th>번호</th>
 					<th>제목</th>
 					<th>카테고리</th>
 					<th>등록일</th>
@@ -106,11 +107,12 @@ function f_write(val){
 <%-- 						<tr onclick="getfaq(${faq.faq_title})" style="cursor: pointer;"> //faq_no 칼럼 추가 예정 --%>
 <%-- 							<td class="tdCenter">${one.one_no}</td> --%>
 							<tr onclick="getfaq(${faq.faq_no})" style="cursor: pointer;">
-							<td class="tdCenter" onclick="getfaq(${faq.faq_no}")">${faq.faq_title}</td>
-							<td class="tdCenter">${faq.cate_name}</td>
+							<td class="tdCenter" style="width:10%;" >${faq.faq_no}</td>
+							<td class="tdCenter" style="width:60%;"  onclick="getfaq(${faq.faq_no}")">${faq.faq_title}</td>
+							<td class="tdCenter" style="width:15%;" >${faq.cate_name}</td>
 							
 <%-- 							<td class="tdCenter">${faq.faq_reg}</td> --%>
-							<td class="tdCenter"><fmt:formatDate value="${faq.faq_reg}" pattern="yyyy-MM-dd HH:mm-ss" var="today" />${today}</td>
+							<td class="tdCenter" style="width:15%;" ><fmt:formatDate value="${faq.faq_reg}" pattern="yyyy-MM-dd HH:mm-ss" var="today" />${today}</td>
 <%-- 							<td class="tdCenter">${faq.faq_content}</td> --%>
 	
 						</tr>
@@ -120,8 +122,11 @@ function f_write(val){
 				</c:forEach>
 			</tbody>
 		</table>
-		<br>
-		<br>
+		<div>
+		<button class="write" onclick="f_write('${mb_Id}')" style="cursor:pointer">글쓰기</button>
+		</div>
+		</div>
+		<div id="btnBox_parent">
 		<div id="btnBox">
 			<!-- 반복처리할 태그 시작-->
 			<c:if test="${paging.nowPageBtn > 1 }">
@@ -148,7 +153,7 @@ function f_write(val){
 
 		<%--   <c:if test="${session.getAttribute(mb_id) !==  --%>
 		<%--   <div id="footer"> --%>
-		      <div onclick="f_write('${mb_Id}')" style="cursor:pointer">글쓰기</div>
+		     
 	</div>
 
 

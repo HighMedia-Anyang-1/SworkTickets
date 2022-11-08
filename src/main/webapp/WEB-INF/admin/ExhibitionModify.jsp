@@ -9,7 +9,7 @@
 %>
 <%@ include file="../../header.jsp"%>
 <body>
-	<div class="jumbotron">
+	<div class="board">
 		<h1>전시 수정</h1>
 	</div>
 	<div class="container-fluid">

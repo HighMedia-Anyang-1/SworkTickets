@@ -15,7 +15,7 @@
 </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
-	<div class="jumbotron">
+	<div class="board">
 		<h1>로그인</h1>
 	</div>
 	<div class="container" align="center">

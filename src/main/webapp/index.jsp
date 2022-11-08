@@ -63,14 +63,20 @@ aa
 </div> -->
 
 <!-- 센터 시작 -->
-<section class="rank_box">
-<div class="rank1"><span style="color:#7832f7">♥</span>좋아요<br><br>
-</div>
 
 <div class="rank_center"><h1 class="rank-title">RANK</h1></div>
 
-<div class="rank2"><span style="color:#7832f7">%</span>예매율<br><br>
+<section class="rank_box">
+<div class="rank1"><span style="color:#7832f7">♥</span>좋아요<br><br>
+<c:forEach items="${getGoodList}" var="getGoodList" varStatus="status">
+					<div class="row "><div class="col">
+						<a href="getUserExhibition?exh_no=${getGoodList.exh_no}">
+						${status.count} 
+							${getGoodList.exh_title}</a> ${getGoodList.rank_cnt }<br>
+					</div></div>
+</c:forEach>
 </div>
+<div class="rank2"><span style="color:#7832f7">%</span>예매율<br><br></div>
 </section>
 <div class="rank_ex">
 <button type="button" onclick = "location.href= '../ranking'" ><span style="color:#7832f7">+</span>more</button>

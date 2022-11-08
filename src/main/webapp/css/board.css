@@ -47,6 +47,14 @@
 	padding-bottom: 5px;
 	color: #1f1f1f;
 	font-size: 18px;
+	text-align:center;
+}
+
+ 
+@media (max-width: 640px) {
+  .table thead th {
+  font-size: 14px;
+}
 }
 
 .tdCenter {
@@ -57,7 +65,6 @@
 
 .table td {
 	padding: 20px 0 20px 0;
-	overflow: hidden;
 }
 
 .write {

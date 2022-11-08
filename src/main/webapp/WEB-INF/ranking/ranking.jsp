@@ -83,6 +83,10 @@
 	<div class="jumbotron">
 		<a href="getUserExhibitionList"><h1 class="text-center">+more</h1></a>
 	</div>
+	
+	
+	
+	
 <%@ include file="/footer.jsp"%>
 </body>
 </html>

@@ -36,7 +36,6 @@ public class MemberController {
     @RequestMapping(value = "/idChk", method = RequestMethod.POST)
     public int idChk(@RequestParam Map<String, Object> param) {
 //        int result = memberService.idChk(param);
-    	System.out.println(memberService.idChk(param));
         return memberService.idChk(param);
         
     }

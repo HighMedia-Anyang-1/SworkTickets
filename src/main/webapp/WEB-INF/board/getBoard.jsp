@@ -98,7 +98,7 @@ cursor: pointer;
 				<div class="input-group-prepend">
 					<span class="input-group-text">제목</span>
 				</div>
-				<input type="text" class="form-control innm" name="noti_title"
+				<input type="text" class="form-control innm" name="noti_title" maxlength="40"
 					value="${board.noti_title}" <%=sts %>>
 			</div>
 			<div class="input-group mb-3">

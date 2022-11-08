@@ -6,6 +6,7 @@
   --button-color: #23263b;
   --menubar-color: #4B5563;
 }
+
 /* 통합 css */
 body {
   background-color: var(--background-color1) !important;
@@ -233,7 +234,7 @@ a.nav-link.dropdown-toggle.header-toggle-login::after{
 
 
 .rank_box {
-	margin-top: 100px;
+	margin-top: 10px;
 }
 
 .rank_box > div {
@@ -252,23 +253,19 @@ a.nav-link.dropdown-toggle.header-toggle-login::after{
 
 
 .rank1 {
-	width: 40%;
-	top: 200px;
+	width: 50%;
 }
 
 .rank2 {
-	width: 39%;
-	top: 200px;
+	width: 49%;
+	border-left: 1px solid;
 }
 
-.rank_center {
-	display: inline-block;
-	width: 20%;
-}
 
 .rank-title {
+	text-align: center;
     position: sticky;
-    top: 0; 
+    margin-top: 70px; 
 }
 
 
@@ -476,7 +473,7 @@ footer {
 	background-color: #7329f7; 
 	color: #fff; 
 	font-size: 18px;
-	 font-weight: bold;
+	font-weight: bold;
 }
 /* 페이징 */
 .page-st:hover

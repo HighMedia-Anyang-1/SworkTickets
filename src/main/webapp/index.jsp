@@ -69,11 +69,11 @@ aa
 <section class="rank_box">
 <div class="rank1"><span style="color:#7832f7">♥</span>좋아요<br><br>
 <c:forEach items="${getGoodList}" var="getGoodList" varStatus="status">
-					<div class="row "><div class="col">
-						<a href="getUserExhibition?exh_no=${getGoodList.exh_no}">
-						${status.count} 
-							${getGoodList.exh_title}</a> ${getGoodList.rank_cnt }<br>
-					</div></div>
+               <div class="row "><div class="col">
+                  <a href="getUserExhibition?exh_no=${getGoodList.exh_no}">
+                  ${status.count} 
+                     ${getGoodList.exh_title}</a> ${getGoodList.rank_cnt }<br>
+               </div></div>
 </c:forEach>
 </div>
 <div class="rank2"><span style="color:#7832f7">%</span>예매율<br><br></div>
@@ -105,7 +105,7 @@ aa
 <a href="/getCouponList">- 쿠폰목록</a><br>
 <a href="/pay">- 관리자 결제목록</a><br>
 <div class="container-fluid">
-	<div class="h-100 d-inline-block bg-dark text-white">디브</div>
+   <div class="h-100 d-inline-block bg-dark text-white">디브</div>
 </div>
 
 <!-- footer start -->

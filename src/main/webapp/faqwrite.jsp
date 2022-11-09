@@ -33,7 +33,7 @@
                <span class="input-group-text">작성자</span>
             </div>
             <input type="text" class="form-control innm" name="cate_name"
-               value="${board.noti_writer}" readonly>
+               value="${board.cate_name}" readonly>
          </div>
          <div class="input-group mb-3">
             <div class="input-group-prepend">

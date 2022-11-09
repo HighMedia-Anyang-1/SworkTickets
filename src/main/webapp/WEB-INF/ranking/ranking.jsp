@@ -58,10 +58,8 @@
 				좋아요
 				<c:forEach items="${getGoodList}" var="getGoodList" varStatus="status">
 					<div class="row "><div class="col">
-						<a href="getUserExhibition?exh_no=${getGoodList.exh_no}">
-						${status.count} 
-							${getGoodList.exh_title}</a> ${getGoodList.rank_cnt }<br>
-							 ${getGoodList.exh_img}
+						<a href="getUserExhibition?exh_no=${getGoodList.exh_no}">${status.count} ${getGoodList.exh_title}</a>
+						 ${getGoodList.rank_cnt }<br>
 					</div></div>
 				</c:forEach>
 			</div>
@@ -84,10 +82,6 @@
 	<div class="jumbotron">
 		<a href="getUserExhibitionList"><h1 class="text-center">+more</h1></a>
 	</div>
-	
-	
-	
-	
 <%@ include file="/footer.jsp"%>
 </body>
 </html>

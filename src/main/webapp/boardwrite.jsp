@@ -39,7 +39,7 @@
             <div class="input-group-prepend">
                <span class="input-group-text">내용</span>
             </div>
-            <textarea class="form-control innm" rows="10" id="board_comment"
+            <textarea class="form-control innm" rows="10" id="noti_content"
                name="noti_content" ></textarea>
          </div>
          <div class="input-group mb-3">

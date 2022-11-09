@@ -21,6 +21,8 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import com.ticket.biz.common.PagingVO;
 import com.ticket.biz.exhibition.ExhibitionService;
 import com.ticket.biz.exhibition.ExhibitionVO;
+import com.ticket.biz.good.GoodService;
+import com.ticket.biz.good.GoodVO;
 
 @Controller
 @SessionAttributes("exhibition")
@@ -47,7 +49,7 @@ public class ExhibitionController {
 	public Map<String, String> exSearchConditionMap(){
 		Map<String, String> exConditionMap = new HashMap<String, String>();
 		exConditionMap.put("전시명", "EXH_TITLE");
-		exConditionMap.put("장소", "EXH_HALL");
+//		exConditionMap.put("장소", "EXH_HALL");
 	return exConditionMap;
 	}
 
@@ -56,13 +58,13 @@ public class ExhibitionController {
 //		public String insertmoveExhibition(ExhibitionVO vo) {
 			public String insertmoveExhibition(ExhibitionVO vo, Model model) {
 			System.out.println("상세보기 갔다가 다시 등록하기 누름"+vo.toString());
-			model.addAttribute("exhibition", exhibitionService.getExhibition(vo));
+//			model.addAttribute("exhibition", exhibitionService.getExhibition(vo));
 			return "admin/ExhibitionInsert";
 		}
 	
 	// 전시 등록
 		@RequestMapping(value="/insertExhibition")
-		public String requestupload2(MultipartHttpServletRequest mRequest, ExhibitionVO vo) {
+		public String requestupload2(MultipartHttpServletRequest mRequest, ExhibitionVO vo, Model model) {
 		
 		MultipartFile uploadFile_banne = vo.getUploadFile_banne();
 		String fileName_banne = uploadFile_banne.getOriginalFilename();
@@ -70,8 +72,8 @@ public class ExhibitionController {
 		MultipartFile uploadFile_thumb = vo.getUploadFile_thumb();
 		String fileName_thumb = uploadFile_thumb.getOriginalFilename();
 		
-//		String realPath = "C:/swork/tickets/src/main/webapp/images/";
-		String realPath = "D:/swork/tickets/src/main/webapp/images/";
+		String realPath = "C:/swork/tickets/src/main/webapp/images/";
+//		String realPath = "D:/swork/tickets/src/main/webapp/images/";
 		String fileName="";
 		
 		List<MultipartFile> fileList = mRequest.getFiles("uploadFile");
@@ -98,7 +100,6 @@ public class ExhibitionController {
 			}
 		}
 		
-		System.out.println("4");
 		for (MultipartFile mf : fileList) {
 			fileName +="/"+ mf.getOriginalFilename(); // 원본 파일 명
 //			long fileSize = mf.getSize(); // 파일 사이즈
@@ -114,39 +115,55 @@ public class ExhibitionController {
 				e.printStackTrace();
 			}
 		}
+		int maxExh_no = exhibitionService.getMaxExhibition(vo);
 		exhibitionService.insertExhibition(vo);
-		return "redirect:getExhibitionList";
+//		model.addAttribute("exhibition", exhibitionService.getExhibition(vo));
+		System.out.println("최대 번호 : "+maxExh_no);
+		int maxEXNPlus = maxExh_no+1;
+		System.out.println("최대 번호 : "+maxEXNPlus);
+//		return "redirect:getExhibitionList";
+//		return "admin/ExhibitionDetail";
+		return "redirect:getExhibition?exh_no="+maxEXNPlus;
 	}
 		
 	// 전시 승인
 	@RequestMapping("/approvalExhibition")
-	public String approvalExhibition(@ModelAttribute("exhibition") ExhibitionVO vo, HttpSession session,HttpServletRequest request) {
-		String page= request.getParameter("page");
-		System.out.println("page : "+page);
+	public String approvalExhibition(@ModelAttribute("exhibition") ExhibitionVO vo, HttpSession session) {
 		exhibitionService.approvalExhibition(vo);
 		System.out.println("전시 승인 서비스 실행");
-		return "redirect:getExhibition?exh_no="+vo.getExh_no()+"&page=1";
+		System.out.println("exh_no="+vo.getExh_no());
+		return "redirect:getExhibition?exh_no="+vo.getExh_no();
 	}
 	
 	// 전시 수정 이동
 	@RequestMapping("/modifymoveExhibition")
 //	public String insertmoveExhibition(ExhibitionVO vo) {
+//		public String modifymoveExhibition(ExhibitionVO vo, Model model, HttpServletRequest request) {
 		public String modifymoveExhibition(ExhibitionVO vo, Model model) {
+//		String page= request.getParameter("page");
 		model.addAttribute("exhibition", exhibitionService.getExhibition(vo));
+//		model.addAttribute("page",page);
+//		System.out.println("수정이동 : "+page);
+		System.out.println("수정이동 : "+vo.getExh_no());
+		
 		return "admin/ExhibitionModify";
 	}
 	
 	// 전시 수정
 	@RequestMapping("/updateExhibition")
 	public String updateExhibition(@ModelAttribute("exhibition") ExhibitionVO vo, HttpSession session) {
+		
 		exhibitionService.updateExhibition(vo);
-		return "redirect:getExhibitionList";
+		System.out.println("수정이동 : "+vo.getExh_no());
+//		return "redirect:getExhibitionList";
+		return "redirect:getExhibition";
 	}
 	
 	// 전시 삭제
 	@RequestMapping("/deleteExhibition")
 	public String deleteExhibition(ExhibitionVO vo, HttpSession session,HttpServletRequest request) {
-		String realPath = "D:/swork/tickets/src/main/webapp/images/";
+//		String realPath = "D:/swork/tickets/src/main/webapp/images/";
+		String realPath = "C:/swork/tickets/src/main/webapp/images/";
 		vo = exhibitionService.getExhibition(vo);
 		if (vo.getExh_img() != null || vo.getExh_thumbnail() != null ||  vo.getExh_banne() != null ) {
 			String[] imgArr = vo.getExh_img().split("/");
@@ -170,8 +187,8 @@ public class ExhibitionController {
 	@RequestMapping("/getExhibition")
 	public String getExhibition(ExhibitionVO vo, Model model, HttpServletRequest request) {
 		String page= request.getParameter("page");
-		System.out.println("page : "+page);
 		model.addAttribute("page",page);
+		System.out.println("page 상세 : "+page);
 		model.addAttribute("exhibition", exhibitionService.getExhibition(vo));
 		return "admin/ExhibitionDetail";
 	}
@@ -203,9 +220,21 @@ public class ExhibitionController {
 				return "admin/ExhibitionList";
 	}
 	
+	@Autowired
+	GoodService goodService;
 	// 유저 전시 상세 조회
 		@RequestMapping("/getUserExhibition")
-		public String getUserExhibition(ExhibitionVO vo, Model model) {
+		public String getUserExhibition(ExhibitionVO vo, Model model,HttpSession session,GoodVO gvo) {
+	
+		
+			String id=(String)session.getAttribute("mb_Id");
+			
+			gvo.setExh_no(vo.getExh_no());
+			gvo.setMb_id(id);
+	
+				
+				model.addAttribute("good_check",goodService.getGoodYN(gvo));
+			
 			model.addAttribute("exhibition", exhibitionService.getExhibition(vo));
 			return "exhibition/UserExhibitionDetail";
 		}

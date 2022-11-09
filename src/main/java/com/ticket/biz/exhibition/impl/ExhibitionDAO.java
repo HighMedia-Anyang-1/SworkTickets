@@ -51,6 +51,11 @@ public class ExhibitionDAO {
 		return mybatis.selectOne("ExhibitionDAO.totalExhibitionListCnt", vo);
 	}
 
+	// 전시 번호 최대값
+	public int getMaxExhibition(ExhibitionVO vo) {
+		return mybatis.selectOne("ExhibitionDAO.getMaxExhibition", vo);
+	}
+	
 	// 유저 전시 목록 조회
 	public List<ExhibitionVO> getUserExhibitionList(ExhibitionVO vo) {
 		return mybatis.selectList("ExhibitionDAO.getUserExhibitionList",vo);
@@ -60,6 +65,16 @@ public class ExhibitionDAO {
 	public int totalUserExhibitionListCnt(ExhibitionVO vo) {
 		return mybatis.selectOne("ExhibitionDAO.totalUserExhibitionListCnt", vo);
 		}
+	
+	// 유저 전시 검색
+	public List<ExhibitionVO> searchUserExhibitionList(ExhibitionVO vo) {
+		return mybatis.selectList("ExhibitionDAO.searchUserExhibitionList",vo);
+	}
+	
+	// 유저 전시 검색 개수 조회
+	public int totalsearchUserExhibitionListCnt(ExhibitionVO vo) {
+		return mybatis.selectOne("ExhibitionDAO.totalsearchUserExhibitionListCnt", vo);
+	}
 
 
 }

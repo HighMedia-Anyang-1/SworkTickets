@@ -45,7 +45,7 @@
       <div class="form-group col-xs-6 my-2">
         <div class="inner-addon right-addon" name="addonHambuger">
           <i class="glyphicon fas fa-search"></i>
-          <input type="text" class="form-control" placeholder="검색" name="exSearchKeyword" id="exSearchKeyword" onkeyup="searchkey()" />
+          <input type="text" class="form-control hambuger" placeholder="검색" name="exSearchKeyword" id="exSearchKeyword" onkeyup="searchkey()" />
         </div>
       </div>
     
@@ -79,7 +79,7 @@
                <a class="dropdown-item header-item" href="/getOneList">1:1 문의</a>
         </div>
       </li>
-         
+         <a class="nav-link header-logout hamburger" href="/logoutGO">로그아웃</a>
     </ul>
   </div>
 <!--   햄버거 끝 -->
@@ -116,9 +116,9 @@
       <ul class="nav navbar-nav navbar-right">
             <!-- 검색 -->
       <div class="form-group col-xs-6 my-2">
-        <div class="inner-addon right-addon" name="addonMain">
+        <div class="inner-addon right-addon main" name="addonMain">
           <i class="glyphicon fas fa-search"></i>
-          <input type="text" class="form-control" placeholder="검색" name="exSearchKeyword" id="exSearchKeyword" onkeyup="searchkey()" />
+          <input type="text" class="form-control main" placeholder="검색" name="exSearchKeyword" id="exSearchKeyword" onkeyup="searchkey()" />
         </div>
       </div>
       <!-- 검색 -->
@@ -135,7 +135,7 @@
                </div>
                </li>
             </ul>
-               <a class="nav-link header-logout" href="/logoutGO">로그아웃</a>
+               <a class="nav-link header-logout main" href="/logoutGO">로그아웃</a>
       </c:when>
       
        <c:when test="${mb_Id ne NULL}">
@@ -165,9 +165,9 @@
       <ul class="nav navbar-nav navbar-right">
             <!-- 검색 -->
       <div class="form-group col-xs-6 my-2">
-        <div class="inner-addon right-addon " name="addonMain">
+        <div class="inner-addon right-addon main" name="addonMain">
           <i class="glyphicon fas fa-search"></i>
-          <input type="text" class="form-control" placeholder="검색" name="exSearchKeyword" id="exSearchKeyword" onkeyup="searchkey()" />
+          <input type="text" class="form-control main" placeholder="검색" name="exSearchKeyword" id="exSearchKeyword" onkeyup="searchkey()" />
         </div>
       </div>
       <!-- 검색 -->
@@ -185,7 +185,7 @@
                </li>
             </ul>
             
-               <a class="nav-link header-logout" href="/logoutGO">로그아웃</a>
+               <a class="nav-link header-logout main" href="/logoutGO">로그아웃</a>
       </c:when>
         <c:when test="${kakaoId ne NULL || naverLogin ne NULL}">
          <ul class="nav navbar-nav mr-auto ml-3">
@@ -214,10 +214,10 @@
       <ul class="nav navbar-nav navbar-right">
             <!-- 검색 -->
       <div class="form-group col-xs-6 my-2">
-        <div class="inner-addon right-addon" name="addonMain">
+        <div class="inner-addon right-addon main" name="addonMain">
           <i class="glyphicon fas fa-search"></i>
-          <input type="text" class="form-control" placeholder="검색" name="exSearchKeyword" id="exSearchKeyword" onkeyup="searchkey()" />
-        </div>
+          <input type="text" class="form-control main" placeholder="검색" name="exSearchKeyword" id="exSearchKeyword" onkeyup="searchkey()" />
+        </div> 
       </div>
       <!-- 검색 -->
                <li class="nav-item">
@@ -233,7 +233,7 @@
                </li>
             </ul>
             
-               <a class="nav-link header-logout" href="/logoutGO">로그아웃</a>
+               <a class="nav-link header-logout main" href="/logoutGO">로그아웃</a>
       </c:when>
       
       <c:otherwise> 
@@ -261,9 +261,9 @@
       </ul>
       <!-- 검색 -->
       <div class="form-group col-xs-6 my-2">
-        <div class="inner-addon right-addon" name="addonMain">
+        <div class="inner-addon right-addon main" name="addonMain">
           <i class="glyphicon fas fa-search"></i>
-          <input type="text" class="form-control" placeholder="검색" name="exSearchKeyword" id="exSearchKeyword" onkeyup="searchkey()"/>
+          <input type="text" class="form-control main" placeholder="검색" name="exSearchKeyword" id="exSearchKeyword" onkeyup="searchkey()"/>
         </div>
       </div>
       <!-- 검색 -->
@@ -272,7 +272,7 @@
             <li class="nav-item dropdown header-title">
             <!-- <a class="nav-link dropdown-toggle header-toggle-login" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"> 로그인 </a>
                <div class="dropdown-menu header-menu" aria-labelledby="login"> -->
-            <a class="dropdown-item header-item-login" href="login.jsp">&nbsp로그인</a>
+            <a class="dropdown-item header-item-login main" href="login.jsp">&nbsp로그인</a>
             <!-- <a class="dropdown-item header-item" href="/login/kakao">&nbsp카카오로그인</a> -->
             <!-- <a class="dropdown-item header-item" href="insertMember.jsp">&nbsp회원가입</a> -->
             <!-- </div> -->

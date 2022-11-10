@@ -10,11 +10,25 @@
 	/* 약관 전체동의 시작 */
 	$(function(){
 		$("input[name=agreeAll]").click(function(){
-			$("input[name=agree1").prop("checked", this.checked);
-			$("input[name=agree2").prop("checked", this.checked);
+			$("input[name=agree1]").prop("checked", this.checked);
+			$("input[name=agree2]").prop("checked", this.checked);
 			});
 		});
+	
+	$(function(){
+		$("input[name=agree1]" && "input[name=agree2]").click(function(){
+			$("input[name=agreeAll]").prop("checked", this.checked);
+			});
+		});
+	
+	
+	   $("input[name=agree1]" || "input[name=agree2]").click(function() {
+		      if ($("input[name=agree1]" || "input[name=agree2]").prop("checked", this.checked)) {
+		         $("input[name=agreeAll]").prop("unchecked", this.unchecked);
+		      } 
+		   });
 	/* 약관 전체동의 끝 */
+	
 	</script>
 </head>
 <body>
@@ -26,7 +40,7 @@
 			<div class="card-body">
 			  <div class="col-lg-12">
 				<div class="card w-100 p-5">
-				  <label class="checkbox-inline">   
+				  <label class="checkbox-inline">
 					<input type="checkbox" name="agree1" value="true" required="required">동의합니다.
 				  </label>    
 				  <h5 class="card-title">전자상거래 표준약관</h5>

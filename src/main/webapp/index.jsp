@@ -64,6 +64,7 @@ aa
 
 <!-- 센터 시작 -->
 
+
 <div class="rank_center"><h1 class="rank-title">RANK</h1></div>
 
 <section class="rank_box">

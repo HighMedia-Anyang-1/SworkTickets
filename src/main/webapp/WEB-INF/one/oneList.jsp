@@ -30,14 +30,14 @@
 	</div>
 	<nav id="searchNav" class="sub_title">
 		<form class="form-inline" action="getOneList" method="post">
-			<select class="form-control" id="sel1" name="searchCondition"
+			<select class="form-control content" id="sel1" name="searchCondition"
 				style="display: inline-block !important; margin-right: 10px;">
 				<c:forEach items="${conditionMap}" var="option">
 					<option value="${option.value}">${option.key}</option>
 				</c:forEach>
 				<%-- 		<option value="${conditionMap['제목']}">${conditionMap['제목']}</option> --%>
 				<%-- 		<option value="${conditionMap['내용']}">${conditionMap['내용']}</option> --%>
-			</select> <input class="form-control mr-sm-2" type="text" name="searchKeyword"
+			</select> <input class="form-control mr-sm-2 input" type="text" name="searchKeyword"
 				placeholder="검색어를 입력하세요.">
 			<button class="btn btn-success" type="submit">검색</button>
 		</form>

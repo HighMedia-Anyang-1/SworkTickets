@@ -444,14 +444,30 @@ li.dropdown {
 /* 푸터 style */
 footer {
    width: 100%;
-   background: #23263b;
+   background: #fff;
    padding-left:1%;
-   margin-top:50px;
-   
 }
 
+.mt-auto{
+	margin-top:100px!important;
+	border-top:1px solid #1f1f1f;
+}
+
+.container.footer{
+	max-width:100%;
+}
+
+div.footer_info{
+	text-align: center;
+}
+
+div.inner{
+	display: inline-block;
+	text-align: center;
+}
 
   .footer_row {
+  
       display: flex;
       justify-content: flex-start;
       padding-top: 60px;
@@ -475,7 +491,7 @@ footer {
    }
    .footer_row {
       letter-spacing:2px;
-      margin-left:1%;
+/*       margin-left:1%; */
       color: #808080;
    }
 

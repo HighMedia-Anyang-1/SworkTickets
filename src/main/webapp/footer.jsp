@@ -22,7 +22,7 @@
 		</div>
 	</div>
 	<!-- 푸터 내비 닫음 -->
-	<div class="container">
+	<div class="container  footer">
 		<div class="footer_info">
 			<div class="inner">
 				<ul class="footer_row">
@@ -32,13 +32,14 @@
 						<li>교육용으로 만든 홈페이지로 실제 사용 하실 수 없습니다.</li>
 					</ul>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<ul>
-						<li>팀 명: 1조</li>
-					</ul>
+					
 
 				</ul>
 				<!-- 푸터 인포 라인 -->
 				<ul class="footer_row">
+					<ul>
+						<li>팀 명: 1조</li>
+					</ul>
 					&nbsp;&nbsp;&nbsp;
 					<ul>
 						<li>팀장 : 송원선</li>

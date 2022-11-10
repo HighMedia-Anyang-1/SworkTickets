@@ -38,7 +38,7 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
-  	
+     
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav hambuger">
     
@@ -66,14 +66,14 @@
       </li>
       <li class="nav-item hambuger">
         <a class="nav-link hambuger" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"> 쿠폰 </a>
-      	<div class="dropdown-menu header-menu" aria-labelledby="coupon">
+         <div class="dropdown-menu header-menu" aria-labelledby="coupon">
             <a class="dropdown-item header-item" href="/getCouponList">쿠폰목록</a>
             <a class="dropdown-item header-item" href="/insertCouponForm">쿠폰등록</a>
         </div>
       </li>
       <li class="nav-item">
         <a class="nav-link hambuger" data-toggle="dropdown" href="/getOneList" role="button" aria-haspopup="true" aria-expanded="false"> 고객센터 </a>
-      	<div class="dropdown-menu header-menu" aria-labelledby="cs">
+         <div class="dropdown-menu header-menu" aria-labelledby="cs">
                <a class="dropdown-item header-item" href="/getBoardList">공지사항</a>
                <a class="dropdown-item header-item" href="/getFaqList">자주묻는질문</a>
                <a class="dropdown-item header-item" href="/getOneList">1:1 문의</a>
@@ -286,8 +286,8 @@
 //input에 keyup 이벤트 등록
 $(document).ready(function(){
 $("#exSearchKeyword").keyup(function(){
-	var skey = $(this).val();
-	   location.href="getUserExhibitionList";
+   var skey = $(this).val();
+      location.href="getUserExhibitionList";
 console.log(skey);
 });
 });

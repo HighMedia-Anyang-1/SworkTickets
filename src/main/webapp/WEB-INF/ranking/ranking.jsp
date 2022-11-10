@@ -78,12 +78,12 @@ if(i==1){
 				onclick="rank_btn(2)">예매율</button>
 		</div>
 	</div>
-	<div class="container">
+	<div class="container rank">
 		<table class="table table-hover">
 			<thead class="btn-primary">
 				<tr>
-					<th >랭킹</th>
-					<th ></th>
+					<th>랭킹</th>
+					<th></th>
 					<th>전시명</th>
 					<th>가격</th>
 					<th>전시일자</th>
@@ -97,38 +97,39 @@ if(i==1){
 				<c:forEach items="${payRankList}" var="payRankList"
 					varStatus="status">
 						<tr onclick="location.href='getUserExhibition?exh_no=${payRankList.exh_no}'" style="cursor: pointer;">
-						<td class="tdCenter">${status.count}</td>
-						<td class="tdCenter"><img src="/images/2-1.jpg"
+						<td class="tdCenter rank" >${status.count}</td>
+						<td class="tdCenter" ><img src="/images/2-1.jpg"
 							<%-- 						'${payRankList.exh_thumbnail}' --%>
 						alt="이미지"
 							style="width: 100px; height: 150px;"></td>
-						<td class="tdCenter">
+						<td class="tdCenter" >
 								${payRankList.exh_title}</td>
-						<td class="tdCenter"><fmt:formatNumber
+						<td class="tdCenter price" ><fmt:formatNumber
 								value="${payRankList.exh_price}" groupingUsed="true" />원</td>
-						<td class="tdCenter">${payRankList.exh_st_date}~
+						<td class="tdCenter date" >${payRankList.exh_st_date}~
 							${payRankList.exh_end_date}</td>
-						<td class="tdCenter">${payRankList.exh_hall}</td>
+						<td class="tdCenter exh_hall" >${payRankList.exh_hall}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
 
-			<tbody id="good_tab" style="border-top: 1.5px solid #1f1f1f";>
+			<tbody id="good_tab" style="border-top: 1.5px solid #1f1f1f">
 				<c:forEach items="${getGoodList}" var="getGoodList"
 					varStatus="status">
 					<tr onclick="location.href='getUserExhibition?exh_no=${getGoodList.exh_no}'" style="cursor: pointer;">
-						<td class="tdCenter">${status.count}</td>
+						<td class="tdCenter rank">${status.count}</td>
+						<div></div>
 							<td class="tdCenter"><img src="/images/2-1.jpg"
 							<%-- 						'${payRankList.exh_thumbnail}' --%>
 						alt="이미지"
 							style="width: 100px; height: 150px;"></td>
 						<td class="tdCenter">
 								${getGoodList.exh_title}</td>
-						<td class="tdCenter"><fmt:formatNumber
+						<td class="tdCenter price"><fmt:formatNumber
 								value="${getGoodList.exh_price}" groupingUsed="true" />원</td>
-						<td class="tdCenter">${getGoodList.exh_st_date}~
+						<td class="tdCenter date">${getGoodList.exh_st_date}~
 							${getGoodList.exh_end_date}</td>
-						<td class="tdCenter">${getGoodList.exh_hall}</td>
+						<td class="tdCenter exh_hall">${getGoodList.exh_hall}</td>
 
 					</tr>
 				</c:forEach>

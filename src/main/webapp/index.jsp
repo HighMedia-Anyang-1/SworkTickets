@@ -12,7 +12,7 @@
 <body class="d-flex flex-column min-vh-100">
 <!-- <img class="picture" src="./images/main_image.png" /> -->
 
-<div id="carouselExampl	eCaptions" class="carousel slide" data-ride="carousel" data-interval="false">
+<div id="carouselExampl   eCaptions" class="carousel slide" data-ride="carousel" data-interval="false">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
@@ -70,9 +70,9 @@ aa
 <section class="rank_box">
 <div class="rank1">
         <i class="bi bi-suit-heart-fill"></i>
-	좋아요<br><br>
-	
-<!-- 	  <div class="cd"> -->
+   좋아요<br><br>
+   
+<!--      <div class="cd"> -->
         <div class="container">
             <div class="grid">
                 <div class="card">
@@ -85,7 +85,7 @@ aa
     <div>
         <i class="bi bi-suit-heart-fill"></i>
         <span class="num" data-val="300">000</span>
-		</div>
+      </div>
                     </div>
                 </div>
             </div>
@@ -101,7 +101,7 @@ aa
     <div>
         <i class="bi bi-suit-heart-fill"></i>
         <span class="num" data-val="230">000</span>
-		</div>
+      </div>
                     </div>
                 </div>
             </div>
@@ -117,7 +117,7 @@ aa
     <div>
         <i class="bi bi-suit-heart-fill"></i>
         <span class="num" data-val="150">000</span>
-		</div>
+      </div>
                     </div>
                 </div>
             </div>
@@ -134,7 +134,7 @@ aa
 </div>
 <div class="rank2"><span style="color:#7832f7">%</span>예매율<br><br>
 
-<!-- 	  <div class="cd"> -->
+<!--      <div class="cd"> -->
         <div class="container">
             <div class="grid">
                 <div class="card">
@@ -161,7 +161,7 @@ aa
                     </div>
                     <div class="card_body">
 <!--                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum porro, illum totam nostrum sit delectus nisi sint magni perspiciatis adipisci?</p> -->
-  	<div class="container cir">
+     <div class="container cir">
     <div class="circular-progress2">
         <div class="value-container2">0%</div>
     </div>

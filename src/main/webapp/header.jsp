@@ -22,6 +22,7 @@
     <script src="https://kit.fontawesome.com/22152c116a.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="./css/style.css">
 <link rel="stylesheet" href="./css/board.css">
+<link rel="stylesheet" href="./css/ranking.css">
 
 <title>헤더입니다.</title>
 </head>
@@ -54,7 +55,7 @@
          <a class="nav-link mypage hambuger" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"> 마이페이지 </a>            
       </li>
       <li class="nav-item">
-        <a class="nav-link hambuger" href="/getExhibitionList" > 전시 </a>
+        <a class="nav-link hambuger" href="/getUserExhibitionList" > 전시 </a>
       </li>
       <li class="nav-item">
         <a class="nav-link hambuger" href="/ranking"> 랭킹 </a>

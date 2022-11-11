@@ -167,7 +167,6 @@ input::-webkit-inner-spin-button {
    }
 }
 
-.ui-tabs .ui-tabs-nav .ui-tabs-anchor:active{ color: red; }
 
 .inner-addon {
    position: relative;

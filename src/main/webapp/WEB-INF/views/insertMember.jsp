@@ -184,8 +184,6 @@ function numberMaxLength(e){
     }
 }
 
-
-
 //아이디 중복체크
  function chkBtn(){
    var idRegex = /^[0-9|a-z|A-Z|]*$/;
@@ -321,7 +319,7 @@ font-size:16px !important;
                         
                                <div class="col-md-10">
                               <input id="mb_phone" type="number" name="mb_phone" class="form-control" title="전화번호 입력"
-                                       placeholder="01068093332" maxlength="11" minlength="10"
+                                       placeholder="010-6809-3332" maxlength="11" minlength="10"
                                        oninput="numberMaxLength(this);" required />
                               </div>
                
@@ -351,7 +349,6 @@ font-size:16px !important;
                                        <input type="hidden" id="phoneDoubleChk" />
                                     
                                           <a style="text-decoration: none;"></a>
-
                                     </div>
                            
                         

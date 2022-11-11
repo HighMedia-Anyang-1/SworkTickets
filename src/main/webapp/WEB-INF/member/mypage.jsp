@@ -22,20 +22,27 @@ if (session.getAttribute("mb_Id") == null) {
       var mb_pw = document.getElementById("pw").value;
       var mb_pw2 = document.getElementById("pw2").value;
       var mb_phone = document.getElementById("mb_phone").value;
-      console.log(mb_phone);
+      var mb_email = document.getElementById("mb_email").value;
+      
       if(mb_pw != mb_pw2) {
             alert("비밀번호가 다릅니다.");
              return false;
       } 
 
       if(!phone_chk(mb_phone)){
-            alert("번호를 형식에 맞게 입력하세요");
+            alert("번호를 형식에 맞게 입력하세요.");
             return false;
           } else {
              if(document.form.mb_phone.value.length < document.form.mb_phone.minLength){
                 alert("번호를 형식에 맞게 입력하세요 제발");
+                return false;
              }
           }
+      if(!email_chk(mb_email)){
+    	  alert("이메일을 형식에 맞게 입력하세요. 제발");
+    	  return false;
+      } 
+      
       }
       
       
@@ -47,18 +54,25 @@ if (session.getAttribute("mb_Id") == null) {
       } else {
          console.log("else문입니다.");
       }
-      } else{
+      } else {
          location.href= "mypage";
       }
    }
+   
+   function editMember(mb_id) {
+	      if(confirm('정말 수정하시겠습니까?')){
+	    	  debugger;
+	        location.href = "updateMember?mb_id=" + mb_id;
+	      	} else{
+	         location.href= "mypage";
+	         return false;
+	      }
+	   }
    
    function numberMaxLength(e){
        if(e.value.length > e.maxLength){
            e.value = e.value.slice(0, e.maxLength);
        }
-//        if(e.value.length < e.minLength) {
-//           alert("번호를 형식에 맞게 입력하세요 제발")
-//        }
    }
    
    function email_chk(obj){
@@ -97,12 +111,19 @@ input-group mb-3{width: 70% !important;}
 </style>
 </head>
 <body>
+<%    
+response.setHeader("Cache-Control","no-store");    
+response.setHeader("Pragma","no-cache");    
+response.setDateHeader("Expires",0);    
+if (request.getProtocol().equals("HTTP/1.1"))  
+        response.setHeader("Cache-Control", "no-cache");  
+%>
    <div class="container"
    style="width: 40%; padding: 30px;">
       <h2 style="text-align: center; font-weight: bolder; padding: 30px 0;">마이페이지</h2>
       <hr>
    
-      <form name="form" action="updateMember" method="post" onsubmit="return validate()">
+      <form id ="usrForm" name="form" action="updateMember" method="post" onsubmit="return validate()">
    <div class="input-group mb-3" style="justify-content: center;">
          <input type="hidden" name="mb_no" value="${member.mb_no}">
          <div class="input-group mb-3">
@@ -113,13 +134,13 @@ input-group mb-3{width: 70% !important;}
          </div>
          <div class="mb-3" style="width:100%;">
             <label for="pw">*비밀번호</label> 
-              <input type="password" class="form-control" name="mb_pw" id="pw"  maxlength="20" required>
+              <input type="password" class="form-control" name="mb_pw" id="pw"  maxlength="20">
          </div>
 
          <div class="mb-3" style="width:100%;">
             <label for="pw2">*비밀번호 확인</label>
-              <input type="password" class="form-control" name="mb_pw2" id="pw2"  maxlength="20" minlength="8" required> 
-               <span><font id="checkPw"  size="2">비밀번호는 4~8글자입니다</font></span>
+              <input type="password" class=q"form-control" name="mb_pw2" id="pw2"  maxlength="20" minlength="8"> 
+               <span><font id="checkPw"  size="2">비밀번호는 8~20글자입니다</font></span>
          </div>
 
          <div class="input-group mb-3">
@@ -147,7 +168,7 @@ input-group mb-3{width: 70% !important;}
          </div>
          <div id="footer">
          <div class="container text-center" >
-            <button type="submit" class="btn1" name="btn1" <%=sts%>>회원정보수정</button>
+            <button type="button" class="btn1" name="btn1" onclick="editMember(`${member.mb_id}`)"<%=sts%>>회원정보수정</button>
             <button id="conDel" type="button" class="btn2"
                 onclick="quitMember(`${member.mb_id}`)">회원탈퇴</button>
          </div>

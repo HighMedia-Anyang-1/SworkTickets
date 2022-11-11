@@ -73,7 +73,7 @@ public class MemberController {
 //			System.out.println("aaaa");
 
 	// 회원마이페이지
-	@RequestMapping(value = "/mypage")
+	@RequestMapping(value = "/mypage", method = RequestMethod.POST)
 	public String getMyPage(MemberVO vo, Model model, HttpSession session, HttpServletResponse response) {
 //		System.out.println("회원정보가져오기");
 		model.addAttribute("member", memberService.getMember(vo));
@@ -113,7 +113,7 @@ public class MemberController {
 	}
 
 	// 회원 수정
-	@RequestMapping("/updateMember")
+	@RequestMapping(value="/updateMember", method = RequestMethod.POST)
 	public String updateMember(@ModelAttribute("member") MemberVO vo, HttpSession session) {
 		if (vo.getMb_id().equals(session.getAttribute("mb_Id").toString())
 				|| session.getAttribute("mb_Id").equals("admin")) {
@@ -127,7 +127,7 @@ public class MemberController {
 			if(vo.getMb_pw().equals(memberService.getMember(vo).getMb_pw())) {
 				memberService.updateMember(vo);
 				return "member/mypage";
-			}else {
+			} else {
 				String password = pwCheck.encrypt(vo.getMb_pw());
 				vo.setMb_pw(password);
 				memberService.updateMember(vo);
@@ -176,10 +176,10 @@ public class MemberController {
 
 	/* 이용약관 */
 	@RequestMapping("/registerTerm")
-	public ModelAndView registerTerm(@RequestParam(value = "agree1", defaultValue = "false") Boolean agree1,
-			@RequestParam(value = "agree2", defaultValue = "false") Boolean agree2, MemberVO vo) throws Exception {
+	public ModelAndView registerTerm(@RequestParam(value = "agree", defaultValue = "false") Boolean agree,
+			MemberVO vo) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		if (agree1 == true && agree2 == true) {
+		if (agree == true) {
 			mv.setViewName("views/insertMember");
 			return mv;
 		} else {
@@ -199,17 +199,23 @@ public class MemberController {
 	/* @ResponseBody */
 	@RequestMapping(value = "/deleteMember")
 	public String deleteMember(MemberVO vo, HttpSession session) {
-		session.invalidate();
+		
 		int result = memberService.deleteMember(vo);
-//		System.out.println(result);
-		return "redirect:login.jsp";
+		if(session.getAttribute("mb_Id").equals("admin")) {
+			return "redirect:/getMemberList";
+		}else {
+			session.invalidate();
+			return "redirect:login.jsp";
+		}
 	}
 
 	// 관리자 회원조회
 	@RequestMapping("/getMemberList")
 	public String getMemberListPost(MemberVO vo, String nowPageBtn, Model model) {
 		System.out.println("회원목록 검색 처리");
-
+		
+		memberService.deleteMember2();
+		
 		// 총 목록 수
 		int totalPageCnt = memberService.totalMemberListCnt(vo);
 

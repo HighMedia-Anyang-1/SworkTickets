@@ -24,9 +24,11 @@
 </head>
 <body class="d-flex flex-column min-vh-100">
 	<!-- 타이틀 -->
-	<div class="container"
-		style="width: 50%; padding: 30px;">
-		<h2 style="text-align: center; font-weight: bolder; padding: 30px 0;">결 제 내 역</h2>
+	<div class="container">
+		<div class="board">
+		<h1>결 제 내 역</h1>
+		</div>
+		
 	
 	<nav id="searchNav" class="navbar navbar-expand-sm navbar-dark" style="-webkit-justify-content: flex-end; padding-bottom: 20px;">
 			<form class="form-inline" action="getPayList" method="post">

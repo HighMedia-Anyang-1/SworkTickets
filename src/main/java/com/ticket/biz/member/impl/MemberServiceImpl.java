@@ -76,10 +76,6 @@ public class MemberServiceImpl implements MemberService {
 		memberDAO.updateMember(vo);
 	}
 	
-	@Override
-	public void updateMember_pw(MemberVO vo) {
-		memberDAO.updateMember_pw(vo);
-	}
 
 	@Override
 	public MemberVO find(MemberVO vo) {

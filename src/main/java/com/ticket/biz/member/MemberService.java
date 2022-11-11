@@ -21,9 +21,6 @@ public interface MemberService {
 	/*회원수정*/
 	void updateMember(MemberVO vo);
 	
-	/*회원수정2*/
-	void updateMember_pw(MemberVO vo);
-
 	/*회원탈퇴*/
 	int deleteMember(MemberVO vo);
 

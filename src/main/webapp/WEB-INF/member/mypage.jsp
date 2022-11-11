@@ -29,9 +29,9 @@ if (session.getAttribute("mb_Id") == null) {
              return false;
       } else {
     	  if(mb_pw == "" || mb_pw2  == "") {
-//     		  alert("비밀번호를 입력해주세요.");
-//     		  return false;
-//     	  }
+    		  alert("비밀번호를 입력해주세요.");
+    		  return false;
+    	  }
       }
 
       if(!phone_chk(mb_phone)){

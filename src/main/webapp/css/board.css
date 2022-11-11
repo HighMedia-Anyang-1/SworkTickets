@@ -140,3 +140,8 @@
 .btnBox_parent{
    margin-bottom:20px;
 }
+
+#btnBox_a{
+	font-weight:400;
+	 color:#7832f7;
+}

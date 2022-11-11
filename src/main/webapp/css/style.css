@@ -449,21 +449,21 @@ footer {
 }
 
 .mt-auto{
-	margin-top:100px!important;
-	border-top:1px solid #1f1f1f;
+/*    margin-top:100px!important; */
+   border-top:1px solid #1f1f1f;
 }
 
 .container.footer{
-	max-width:100%;
+   max-width:100%;
 }
 
 div.footer_info{
-	text-align: center;
+   text-align: center;
 }
 
 div.inner{
-	display: inline-block;
-	text-align: center;
+   display: inline-block;
+   text-align: center;
 }
 
   .footer_row {
@@ -556,7 +556,7 @@ div.inner{
 
 @media (max-width: 768px) {
 div.rectangle{
-	margin:20px 0 20px 0;
+   margin:20px 0 20px 0;
 }
 }
 
@@ -568,13 +568,13 @@ div.rectangle{
 }
 
 .col.title{
-	padding-left:40px;
-	padding-right:0px;
+   padding-left:40px;
+   padding-right:0px;
 }
 
 @media (max-width: 768px) {
 .col.title{
-	padding-left:70px;
+   padding-left:70px;
 }
 }
 
@@ -584,8 +584,17 @@ div.rectangle{
 .btn-black{
    border:1px solid #000; 
    width:280px; 
-   height:37px; 
+   height:50px; 
    background-color: #000; 
+   color: #fff; 
+   font-size: 18px;
+    font-weight: bold;
+}
+.btn-black:hover{
+   border:1px solid #000; 
+   width:280px; 
+   height:50px; 
+   background-color: #7329f7; 
    color: #fff; 
    font-size: 18px;
     font-weight: bold;
@@ -602,6 +611,26 @@ div.rectangle{
 .btn-purple:hover{
    border:1px solid #7329f7; 
    width:100px; 
+   height:37px; 
+   background-color: #7329f7; 
+   color: #fff; 
+   font-size: 18px;
+   font-weight: bold;
+}
+
+/* 비밀번호 확인버튼 */
+.btn-purple-pw{
+   border:1px solid #7329f7; 
+/*    width:100px;  */
+   height:37px; 
+   background-color: #fff; 
+   color: #7329f7; 
+   font-size: 18px;
+    font-weight: bold;
+}
+.btn-purple-pw:hover{
+   border:1px solid #7329f7; 
+/*    width:100px;  */
    height:37px; 
    background-color: #7329f7; 
    color: #fff; 
@@ -641,17 +670,15 @@ div.rectangle{
 } 
   .btn-coupon3{
    margin:8px;
-   border:1px solid #fff;
+   border:none;
    width:100px; 
    height:37px; 
    background-color: transparent; 
    color: #fff; 
    font-size: 18px;
-} 
-
-.btn-coupon3{
    transform: translate(0, 85%);
 } 
+
 
 @media (max-width: 768px) {
   .btn-coupon3{
@@ -695,8 +722,10 @@ span.num {
   font-size: 1.3em;
 }
 .bi-suit-heart-fill {
-	font-size: 1.3rem; 
-	color: #f90b57;"
+   font-size: 1.3rem; 
+   color: #f90b57;"
 }
+<<<<<<< HEAD
+=======
 
-
+>>>>>>> origin/member

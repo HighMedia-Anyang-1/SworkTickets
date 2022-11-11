@@ -31,15 +31,14 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 
-    // 아이디 중복 검사
-    @ResponseBody
-    @RequestMapping(value = "/idChk", method = RequestMethod.POST)
-    public int idChk(@RequestParam Map<String, Object> param) {
+	// 아이디 중복 검사
+	@ResponseBody
+	@RequestMapping(value = "/idChk", method = RequestMethod.POST)
+	public int idChk(@RequestParam Map<String, Object> param) {
 //        int result = memberService.idChk(param);
-        return memberService.idChk(param);
-        
-    }
-    
+		return memberService.idChk(param);
+
+	}
 	// 회원 수정 비밀번호 확인
 //	@ResponseBody
 //	@RequestMapping(value = "/pwChk", method = RequestMethod.POST)
@@ -73,7 +72,7 @@ public class MemberController {
 //			System.out.println("aaaa");
 
 	// 회원마이페이지
-	@RequestMapping(value = "/mypage", method = RequestMethod.POST)
+	@RequestMapping(value = "/mypage", method= RequestMethod.POST)
 	public String getMyPage(MemberVO vo, Model model, HttpSession session, HttpServletResponse response) {
 //		System.out.println("회원정보가져오기");
 		model.addAttribute("member", memberService.getMember(vo));
@@ -113,7 +112,7 @@ public class MemberController {
 	}
 
 	// 회원 수정
-	@RequestMapping(value="/updateMember", method = RequestMethod.POST)
+	@RequestMapping("/updateMember")
 	public String updateMember(@ModelAttribute("member") MemberVO vo, HttpSession session) {
 		if (vo.getMb_id().equals(session.getAttribute("mb_Id").toString())
 				|| session.getAttribute("mb_Id").equals("admin")) {
@@ -127,7 +126,7 @@ public class MemberController {
 			if(vo.getMb_pw().equals(memberService.getMember(vo).getMb_pw())) {
 				memberService.updateMember(vo);
 				return "member/mypage";
-			} else {
+			}else {
 				String password = pwCheck.encrypt(vo.getMb_pw());
 				vo.setMb_pw(password);
 				memberService.updateMember(vo);
@@ -174,20 +173,36 @@ public class MemberController {
 		return "redirect:index.jsp";
 	}
 
-	/* 이용약관 */
-	@RequestMapping("/registerTerm")
-	public ModelAndView registerTerm(@RequestParam(value = "agree", defaultValue = "false") Boolean agree,
-			MemberVO vo) throws Exception {
-		ModelAndView mv = new ModelAndView();
-		if (agree == true) {
-			mv.setViewName("views/insertMember");
-			return mv;
-		} else {
-			mv.setViewName("views/step1");
-			return mv;
-		}
+//	/* 이용약관 */
+//	@RequestMapping("/registerTerm")
+//	public ModelAndView registerTerm(@RequestParam(value = "agree1", defaultValue = "false") Boolean agree1,
+//			@RequestParam(value = "agree2", defaultValue = "false") Boolean agree2, MemberVO vo) throws Exception {
+//		ModelAndView mv = new ModelAndView();
+//		if (agree1 == true && agree2 == true) {
+//			mv.setViewName("views/insertMember");
+//			return mv;
+//		} else {
+//			mv.setViewName("views/step1");
+//			return mv;
+//		}
+//
+//	}
+	
+	   /* 이용약관 */
+	   @RequestMapping("/registerTerm")
+	   public ModelAndView registerTerm(@RequestParam(value = "agree", defaultValue = "false") Boolean agree,
+	         MemberVO vo) throws Exception {
+	      ModelAndView mv = new ModelAndView();
+	      if (agree == true) {
+	         mv.setViewName("views/insertMember");
+	         return mv;
+	      } else {
+	         mv.setViewName("views/step1");
+	         return mv;
+	      }
 
-	}
+	   }
+
 	// 이용약관 뷰
 
 	@RequestMapping(value = "/step1")

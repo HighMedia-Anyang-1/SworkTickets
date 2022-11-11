@@ -27,7 +27,12 @@ if (session.getAttribute("mb_Id") == null) {
       if(mb_pw != mb_pw2) {
             alert("비밀번호가 다릅니다.");
              return false;
-      } 
+      } else {
+    	  if(mb_pw == "" || mb_pw2  == "") {
+//     		  alert("비밀번호를 입력해주세요.");
+//     		  return false;
+//     	  }
+      }
 
       if(!phone_chk(mb_phone)){
             alert("번호를 형식에 맞게 입력하세요.");
@@ -43,8 +48,24 @@ if (session.getAttribute("mb_Id") == null) {
     	  return false;
       } 
       
+      if(confirm('정말 수정하시겠습니까?')){
+    	  location.href = "updateMember?mb_id=" + mb_id;
+      } else {
+    	  location.href= "mypage";
+	         return false;
       }
       
+      }
+      
+   
+//    function editMember(mb_id) {
+// 	      if(confirm('정말 수정하시겠습니까?')){
+// 	        location.href = "updateMember?mb_id=" + mb_id;
+// 	      	} else{
+// 	         location.href= "mypage";
+// 	         return false;
+// 	      }
+// 	   }
       
    function quitMember(mb_id) {
       if(confirm('정말 탈퇴하시겠습니까?')){
@@ -59,15 +80,7 @@ if (session.getAttribute("mb_Id") == null) {
       }
    }
    
-   function editMember(mb_id) {
-	      if(confirm('정말 수정하시겠습니까?')){
-	    	  debugger;
-	        location.href = "updateMember?mb_id=" + mb_id;
-	      	} else{
-	         location.href= "mypage";
-	         return false;
-	      }
-	   }
+
    
    function numberMaxLength(e){
        if(e.value.length > e.maxLength){
@@ -140,7 +153,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
          <div class="mb-3" style="width:100%;">
             <label for="pw2">*비밀번호 확인</label>
               <input type="password" class=q"form-control" name="mb_pw2" id="pw2"  maxlength="20" minlength="8"> 
-               <span><font id="checkPw"  size="2">비밀번호는 8~20글자입니다</font></span>
+               <span><font id="checkPw" size="2">비밀번호는 8~20글자입니다</font></span>
          </div>
 
          <div class="input-group mb-3">
@@ -168,9 +181,10 @@ if (request.getProtocol().equals("HTTP/1.1"))
          </div>
          <div id="footer">
          <div class="container text-center" >
-            <button type="button" class="btn1" name="btn1" onclick="editMember(`${member.mb_id}`)"<%=sts%>>회원정보수정</button>
+            <button type="submit" class="btn1" name="btn1" <%=sts%>>회원정보수정</button>
             <button id="conDel" type="button" class="btn2"
                 onclick="quitMember(`${member.mb_id}`)">회원탈퇴</button>
+<%--                 onclick="editMember(`${member.mb_id}`)" --%>
          </div>
          </div>
    </div>

@@ -49,6 +49,13 @@ public class MemberDAO {
 		mybatis.update("MemberDAO.updateMember", vo);
 		System.out.println("회원수정" + vo);
 	}
+	
+	/* 회원수정2 */
+	public void updateMember_pw(MemberVO vo) {
+		System.out.println("mybatis회원정보수정 기능");
+		mybatis.update("MemberDAO.updateMember", vo);
+		System.out.println("회원수정" + vo);
+	}
 
 	public MemberVO loginCheck(MemberVO vo) {
 		return mybatis.selectOne("MemberDAO.login", vo);

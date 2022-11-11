@@ -670,7 +670,7 @@ div.rectangle{
 } 
   .btn-coupon3{
    margin:8px;
-   border:none;
+   border: 1px solid #fff;
    width:100px; 
    height:37px; 
    background-color: transparent; 

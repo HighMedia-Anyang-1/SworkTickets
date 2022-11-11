@@ -72,7 +72,7 @@ public class MemberController {
 //			System.out.println("aaaa");
 
 	// 회원마이페이지
-	@RequestMapping(value = "/mypage", method= RequestMethod.POST)
+	@RequestMapping(value = "/mypage")
 	public String getMyPage(MemberVO vo, Model model, HttpSession session, HttpServletResponse response) {
 //		System.out.println("회원정보가져오기");
 		model.addAttribute("member", memberService.getMember(vo));
@@ -145,10 +145,34 @@ public class MemberController {
 		} else {
 			return "redirect:member/mypage?error=1";
 		}
-			
-		
-
 	}
+	
+	
+	
+//	// 회원 수정
+//	@RequestMapping("/updateMember_pw")
+//	public String updateMember_pw(@ModelAttribute("member") MemberVO vo, HttpSession session) {
+//		if (vo.getMb_id().equals(session.getAttribute("mb_Id").toString())
+//				|| session.getAttribute("mb_Id").equals("admin")) {
+//			
+//			if(vo.getMb_pw().equals(memberService.getMember(vo).getMb_pw())) {
+//				memberService.updateMember(vo);
+//				return "member/mypage";
+//			}else {
+//				String password = pwCheck.encrypt(vo.getMb_pw());
+//				vo.setMb_pw(password);
+//				memberService.updateMember(vo);
+//				return "member/mypage";
+//			}
+//		} else {
+//			return "redirect:member/mypage?error=1";
+//		}
+//	}
+	
+	
+	
+	
+	
 
 //	// 멤버등록
 //	@RequestMapping(value = "/insertMember", method = RequestMethod.POST)

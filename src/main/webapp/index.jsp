@@ -9,6 +9,7 @@
 <%@ include file="header.jsp"%>
 <!-- @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap"); -->
 <style type="text/css">
+
 /* 카드 */
 .cd {
 	align-items: center;

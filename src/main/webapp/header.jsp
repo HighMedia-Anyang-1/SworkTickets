@@ -35,10 +35,11 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav hambuger">
     
-      <div class="form-group col-xs-6 my-2">
-        <div class="inner-addon right-addon" name="addonHambuger">
-          <i class="glyphicon fas fa-search"></i>
-          <input type="text" class="form-control hambuger" placeholder="검색" name="exSearchKeyword" id="exSearchKeyword" onkeyup="searchkey()" />
+      <div class="form-group col-xs-5 my-2">
+        <div class="inner-addon right-addon main" name="addonMain" ">
+          <input style="float:left; position:relative;" type="text" class="form-control main" placeholder="검색" name="eSearchKeyword" id="eSearchKeyword" onkeyup="searchkey()"/>
+      	  <button style="float:right; position:absolute; background:none; border:none;" class="searchbtn" onclick="searchkeya()"
+        	 > <i class="xi-magnifier"></i></button>
         </div>
       </div>
     
@@ -104,10 +105,11 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav hambuger">
     
-      <div class="form-group col-xs-6 my-2">
-        <div class="inner-addon right-addon" name="addonHambuger">
-          <i class="glyphicon fas fa-search"></i>
-          <input type="text" class="form-control hambuger" placeholder="검색" name="exSearchKeyword" id="exSearchKeyword" onkeyup="searchkey()" />
+      <div class="form-group col-xs-5 my-2">
+        <div class="inner-addon right-addon main" name="addonMain" ">
+          <input style="float:left; position:relative;" type="text" class="form-control main" placeholder="검색" name="eSearchKeyword" id="eSearchKeyword" onkeyup="searchkey()"/>
+      	  <button style="float:right; position:absolute; background:none; border:none;" class="searchbtn" onclick="searchkeya()"
+        	 > <i class="xi-magnifier"></i></button>
         </div>
       </div>
     
@@ -170,10 +172,11 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav hambuger">
     
-      <div class="form-group col-xs-6 my-2">
-        <div class="inner-addon right-addon" name="addonHambuger">
-          <i class="glyphicon fas fa-search"></i>
-          <input type="text" class="form-control hambuger" placeholder="검색" name="exSearchKeyword" id="exSearchKeyword" onkeyup="searchkey()" />
+      <div class="form-group col-xs-5 my-2">
+        <div class="inner-addon right-addon main" name="addonMain" ">
+          <input style="float:left; position:relative;" type="text" class="form-control main" placeholder="검색" name="eSearchKeyword" id="eSearchKeyword" onkeyup="searchkey()"/>
+      	  <button style="float:right; position:absolute; background:none; border:none;" class="searchbtn" onclick="searchkeya()"
+        	 > <i class="xi-magnifier"></i></button>
         </div>
       </div>
     
@@ -236,10 +239,11 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav hambuger">
     
-      <div class="form-group col-xs-6 my-2">
-        <div class="inner-addon right-addon" name="addonHambuger">
-          <i class="glyphicon fas fa-search"></i>
-          <input type="text" class="form-control hambuger" placeholder="검색" name="exSearchKeyword" id="exSearchKeyword" onkeyup="searchkey()" />
+      <div class="form-group col-xs-5 my-2">
+        <div class="inner-addon right-addon main" name="addonMain" ">
+          <input style="float:left; position:relative;" type="text" class="form-control main" placeholder="검색" name="eSearchKeyword" id="eSearchKeyword" onkeyup="searchkey()"/>
+      	  <button style="float:right; position:absolute; background:none; border:none;" class="searchbtn" onclick="searchkeya()"
+        	 > <i class="xi-magnifier"></i></button>
         </div>
       </div>
     
@@ -333,13 +337,14 @@
       
       <ul class="nav navbar-nav navbar-right">
    <!-- 검색 -->
-      <div class="form-group col-xs-6 my-2">
-        <div class="inner-addon right-addon main" name="addonMain">
-          <input type="text" class="form-control main" placeholder="검색" name="eSearchKeyword" id="eSearchKeyword" onkeyup="searchkey()"/>
+      <div class="form-group col-xs-5 my-2">
+        <div class="inner-addon right-addon main" name="addonMain" ">
+          <input style="float:left; position:relative;" type="text" class="form-control main" placeholder="검색" name="eSearchKeyword" id="eSearchKeyword" onkeyup="searchkey()"/>
+      	  <button style="float:right; position:absolute; background:none; border:none;" class="searchbtn" onclick="searchkeya()"
+        	 > <i class="xi-magnifier"></i></button>
         </div>
       </div>
-         <button class="searchbtn" onclick="searchkeya()"
-         style="background:none; border:none;"> <i class="xi-magnifier"></i></button>
+         
       <!-- 검색 -->
                <li class="nav-item">
                      <span class="nav-hello-main">${mb_Id}님 안녕하세요</span>
@@ -383,13 +388,13 @@
       
       <ul class="nav navbar-nav navbar-right">
        <!-- 검색 -->
-      <div class="form-group col-xs-6 my-2">
-        <div class="inner-addon right-addon main" name="addonMain">
-          <input type="text" class="form-control main" placeholder="검색" name="eSearchKeyword" id="eSearchKeyword" onkeyup="searchkey()"/>
+      <div class="form-group col-xs-5 my-2">
+        <div class="inner-addon right-addon main" name="addonMain" ">
+          <input style="float:left; position:relative;" type="text" class="form-control main" placeholder="검색" name="eSearchKeyword" id="eSearchKeyword" onkeyup="searchkey()"/>
+      	  <button style="float:right; position:absolute; background:none; border:none;" class="searchbtn" onclick="searchkeya()"
+        	 > <i class="xi-magnifier"></i></button>
         </div>
       </div>
-         <button class="searchbtn" onclick="searchkeya()"
-         style="background:none; border:none;"> <i class="xi-magnifier"></i></button>
       <!-- 검색 -->
                <li class="nav-item">
                      <span class="nav-hello-main">${mb_Id}님 안녕하세요</span>
@@ -433,13 +438,13 @@
       
       <ul class="nav navbar-nav navbar-right">
    <!-- 검색 -->
-      <div class="form-group col-xs-6 my-2">
-        <div class="inner-addon right-addon main" name="addonMain">
-          <input type="text" class="form-control main" placeholder="검색" name="eSearchKeyword" id="eSearchKeyword" onkeyup="searchkey()"/>
+      <div class="form-group col-xs-5 my-2">
+        <div class="inner-addon right-addon main" name="addonMain" ">
+          <input style="float:left; position:relative;" type="text" class="form-control main" placeholder="검색" name="eSearchKeyword" id="eSearchKeyword" onkeyup="searchkey()"/>
+      	  <button style="float:right; position:absolute; background:none; border:none;" class="searchbtn" onclick="searchkeya()"
+        	 > <i class="xi-magnifier"></i></button>
         </div>
       </div>
-     	 <button class="searchbtn" onclick="searchkeya()"
-     	 style="background:none; border:none;"> <i class="xi-magnifier"></i></button>
       <!-- 검색 -->
                <li class="nav-item">
                      <%-- <span class="nav-hello">${kakaoId} 님 안녕하세요 </span> --%>
@@ -481,13 +486,13 @@
          </li>
       </ul>
    <!-- 검색 -->
-      <div class="form-group col-xs-6 my-2">
-        <div class="inner-addon right-addon main" name="addonMain">
-          <input type="text" class="form-control main" placeholder="검색" name="eSearchKeyword" id="eSearchKeyword" onkeyup="searchkey()"/>
+      <div class="form-group col-xs-5 my-2">
+        <div class="inner-addon right-addon main" name="addonMain" ">
+          <input style="float:left; position:relative;" type="text" class="form-control main" placeholder="검색" name="eSearchKeyword" id="eSearchKeyword" onkeyup="searchkey()"/>
+      	  <button style="float:right; position:absolute; background:none; border:none;" class="searchbtn" onclick="searchkeya()"
+        	 > <i class="xi-magnifier"></i></button>
         </div>
       </div>
-		<button type="button" class="searchbtn" onclick="searchkeya()"
-		style="background:none; border:none;"> <i class="xi-magnifier"></i></button>
       <!-- 검색 -->
       
       <ul class="nav navbar-nav navbar-right">

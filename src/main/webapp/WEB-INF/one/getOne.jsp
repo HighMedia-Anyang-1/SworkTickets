@@ -119,6 +119,7 @@ textarea {
 		}
  .one_answer {
 	margin-top:30px;
+ 
 }
 
  a:hover{
@@ -131,9 +132,9 @@ textarea {
 </style>
 
 <body>
-	<div class="board">
-		<h1>상세 보기</h1>
-	</div>
+   <div class="board">
+      <h1>1대1 문의</h1>
+   </div>
 	<%-- <%@ include file="../../menu.jsp" %>   --%>
 	<div class="container-fluid">
 		<%
@@ -166,25 +167,7 @@ textarea {
 				<textarea class="form-control innm" rows="10" cols="10" id="one_comment"
 					name="one_content" <%=sts%>>${one.one_content}</textarea>
 			</div>
-			<div class="input-group mb-3">
-				<div class="input-group-prepend">
-					<span class="input-group-text">파일</span>
-				</div>
-				<c:if test="${one.filename ne NULL}">
-					<span style="cursor: pointer; padding: 0 20px;" onclick="seeImg()">[파일보기]</span>
-					<script>
-	        	function seeImg(){
-	        		$("#imgBox").show();
-	        	}
-<!-- 	        </script> 
-<%--    			<span style="cursor:pointer;" onclick="downloadFile('${one.filename}')">[파일다운]</span> --%>
-					   			<script>
-	   			function downloadFile(filename){
-	   			    window.location ='download.do?filename='+filename;
-	   			}
-			</script>
-				</c:if>
-			</div>
+		
 			<div class="input-group mb-3">
 				<div class="input-group-prepend">
 					<span class="input-group-text">등록일</span>
@@ -193,15 +176,12 @@ textarea {
 				<%--       <input type="text" class="form-control innm" name="regDate" value="${one.regdate}" readonly <%=sts %>>       --%>
 			</div>
 			
-			
-					
-					
 
 			
 			<div id="btnBox_parent">
-            <button class="btn btn-success col-lg-6 col-sm-12" type="submit" style="color: #7832f7" <%=sts%>>글수정</button>
-            <button class="btn btn-success "  style="color: #7832f7"<%=sts%>><a href="write.jsp"> </a>글쓰기</button>
-            <button class="btn btn-success" style="color: #7832f7" <%=sts%>><a href="getOneList"  > </a>글목록</button>
+            <button class="btn btn-success col-lg-6 col-sm-12" type="submit" style="color: #7832f7"<%=sts%>>글수정</button>
+            <button class="btn btn-success "  <%=sts%>><a href="write.jsp" style="color: #7832f7"> 글쓰기</a></button>
+            <button class="btn btn-success" <%=sts%>><a href="getOneList" style="color: #7832f7"  > 글목록</a></button>
             <button class="btn btn-success" div class="btn btn-delete" onclick="deleteone(${one.one_no})" style="cursor: pointer">글삭제</button>
             
 			</div>
@@ -220,7 +200,11 @@ textarea {
 					</form>
 					</div>
 				<div class="regBtn" style="text-align:right; margin: 20px;">
+						<c:choose>
+				<c:when test="${mb_Id eq 'admin' }">
 			<button class="btn btn-success"  id="oneanswer" onclick="answer(${one.one_no})">답변달기</button>
+				</c:when>
+				</c:choose>
 		</div>
 			
 			<!-- 		답변한것 보여주기 -->

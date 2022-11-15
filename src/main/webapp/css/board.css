@@ -54,7 +54,6 @@
    width: 100px;
    color: #7832f7;
 }
-
 @media (max-width: 576px){
    .nav-link.header{
          display:none;

@@ -62,7 +62,7 @@
 <body>
 	<%
 	String sts = "";
-    if (session.getAttribute("mb_id")==null ||!session.getAttribute("mb_Id").equals("admin")) {
+	if (session.getAttribute("mb_id")==null ||!session.getAttribute("mb_Id").equals("admin")) {
 		sts = "disabled";
 	}
 	%>
@@ -134,11 +134,12 @@ function f_write(){
 					<div id="btnBox_parent">
 			<c:choose>
 				<c:when test="${mb_Id eq 'admin' }">
-						<button class="btn btn-success" type="submit" <%=sts%>>글수정</button>
-						<button class="btn btn-success" onclick="f_write()">글쓰기</button>
+						<button class="btn btn-success" type="submit" style="color: #7832f7"<%=sts%>>글수정</button>
+						<button class="btn btn-success" onclick="f_write()" style="color: #7832f7">글쓰기</button>
 						<button class="btn btn-success" div class="btn btn-delete"
-							onclick="deleteboard(${board.noti_no})" style="cursor: pointer">글삭제</button>
+							onclick="deleteboard(${board.noti_no})" style="cursor: pointer" style="color: #7832f7">글삭제</button>
 				</c:when>
+				<c:otherwise></c:otherwise>
 			</c:choose>
 						<button class="btn btn-success" href="getBoardList">글목록</button>
 					</div>

@@ -48,9 +48,9 @@
 }
 
 .btn-success {
-   border: 1px solid #7832f7;
+   border: 1px solid #7832f7!important;
    border-radius: 0px;
-   background-color: #fff;
+   background-color: #fff!important;
    width: 100px;
    color: #7832f7;
 }
@@ -62,7 +62,7 @@
 }
 
 .btn-success:hover {
-   background-color: #7832f7;
+   background-color: #7832f7!important;
    color: #fff;
 }
 

@@ -199,9 +199,9 @@ textarea {
 
 			
 			<div id="btnBox_parent">
-            <button class="btn btn-success col-lg-6 col-sm-12" type="submit" <%=sts%>>글수정</button>
-            <button class="btn btn-success "  <%=sts%>><a href="write.jsp" style="color: #7832f7"> 글쓰기</a></button>
-            <button class="btn btn-success" <%=sts%>><a href="getOneList" style="color: #7832f7"  > 글목록</a></button>
+            <button class="btn btn-success col-lg-6 col-sm-12" type="submit" style="color: #7832f7" <%=sts%>>글수정</button>
+            <button class="btn btn-success "  style="color: #7832f7"<%=sts%>><a href="write.jsp"> </a>글쓰기</button>
+            <button class="btn btn-success" style="color: #7832f7" <%=sts%>><a href="getOneList"  > </a>글목록</button>
             <button class="btn btn-success" div class="btn btn-delete" onclick="deleteone(${one.one_no})" style="cursor: pointer">글삭제</button>
             
 			</div>

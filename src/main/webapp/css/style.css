@@ -239,7 +239,7 @@ a.nav-link.header-logout
 {   
    padding:7px 20px 7px 20px;
    margin-right:7px;
-   font-size:16px;
+   font-size:14px;
    background-color:#1f1f1f!important;
    color:#fff;
    width: 95px;
@@ -263,6 +263,20 @@ a.nav-link.header-logout:hover
 
 a.nav-link.dropdown-toggle.header-toggle-login::after{
    content:inherit;
+}
+
+a.nav-link.dropdown-toggle.header-toggle{
+	font-size:18px;
+	font-weight:300;
+	color:#1f1f1f;
+	padding-top:15px;
+	padding-bottom:0px;
+}
+
+@media (max-width: 768px) {
+	a.nav-link.dropdown-toggle.header-toggle{
+		display:none;
+	}
 }
 
 .nav-link.mypage{

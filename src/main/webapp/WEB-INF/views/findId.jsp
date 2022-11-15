@@ -19,19 +19,10 @@
 	align: left;
 }
 
-#sendMail, #check {
-	width: 90%;
-	height: calc(1.5em + 0.75rem + 2px);
-	color: #7329f7;
-	background-color: white;
-	border-color: #7329f7;
-	border: solid 1px;
-	align: left !important;
-	margin-left: 0;
-}
+
 
 input[type="text"] {
-	width: 400px;
+	width: 100%;
 	height: calc(1.5em + 0.75rem + 2px);
 	align: left !important;
 	margin-right: 0;
@@ -46,6 +37,30 @@ h2 {
 
 .col-3 {
 	text-align: right;
+}
+
+#send {
+	text-align: left!important;
+}
+
+@media (max-width: 768px){
+	#sendMail, #check{
+	width: 100px !important;
+	align: left !important;
+   }
+}
+@media (max-width: 768px){
+#fluid-height{
+	text-align: center !important;
+	width: 100% !important;
+	margin: 0 0 !important;
+   }
+}
+
+@media (max-width: 768px){
+.row{
+	padding: 0 30px !important;
+   }
 }
 </style>
 <script>
@@ -115,43 +130,43 @@ h2 {
 <%@ include file="../../header.jsp"%>
 </head>
 <body>
-	<div style="background-color: lightgray; height: 100vh">
+	<div style="background-color: #f6f5f5; height: 100px;"></div>
+	<div style="background-color: #f6f5f5; height: 100vh">
 		<form action="" method="post" id="findIdform">
 			<input type="hidden" name="mb_email" id="mb_email">
 		</form>
+		<h2 style = " font-size: 30px; padding:0; margin-bottom: 40px; text-align: center;">아이디찾기</h2>
 
-		<h2 style="text-align: center; font-weight: bolder; padding: 50px">아이디찾기</h2>
-
-		<div class="container-fluid" id="fluid-height" style="text-align: -webkit-center; background-color: white; width: 50%">
+		<div class="container-fluid" id="fluid-height" style="text-align: -webkit-center; background-color: white; padding: 0; width: 700px;">
 			<div class="row">
-				<h3 style="margin: 50px 0; margin-left: 10%;">
+				<h3 style="margin: 50px 0; margin-left: 5%; font-size:20px;">
 					&nbsp;&nbsp;&nbsp;&nbsp;E-mail 인증</h3>
 				<br>
 			</div>
 
 			<div class="row">
-				<div class="col-md-3">
-					<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이메일</b>
+				<div class="col-3" style="width:30px;">
+					<b style="margin:0px; font-size:16px; font-weight:400;">이메일</b>
 				</div>
 
-				<div class="col-md-4">
-					<input id="email" name="email" class="text_box" type="text" placeholder="이메일 입력" required autofocus>
+				<div class="col-6">
+					<input style="font-size:16px;" id="email" name="email" class="text_box" type="text" placeholder="이메일 입력" required autofocus>
 				</div>
-				<div class="col-md-5">
-					<button id="sendMail">발송하기</button>
+				<div class="col-3" id="send">
+					<button class="btn-purple" id="sendMail">발송하기</button>
 				</div>
 			</div>
 			<br>
 
 			<div class="row">
-				<div class="col-md-3">
-					<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;인증번호</b>
+				<div class="col-3" style="padding-left:0px;">
+					<b style="margin:0px; font-size:16px; font-weight:400; width:70px;">인증번호</b>
 				</div>
-				<div class="col-md-6" style="margin-bottom: 50px;">
-					<input id='emailCheck' class='text_box' type='text' required disabled>
+				<div class="col-6" id="id2" style="margin-bottom: 50px;">
+					<input style="font-size:16px;" id='emailCheck' class='text_box' type='text' required disabled>
 				</div>
-				<div class="col-md-3">
-					<button id='check' onclick='emailCheck()'>인증확인</button>
+				<div class="col-3" id="send">
+					<button class="btn-purple" id='check' onclick='emailCheck()'>인증확인</button>
 				</div>
 			</div>
 
@@ -160,12 +175,13 @@ h2 {
 			if (request.getAttribute("mb_Id") != null) {
 			%>
 			<div class="row">
-				<div class="col-3">
+				<div class="col-4">
 					<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;아이디</b>
 				</div>
-				<div class="col-6" style="margin-bottom: 50px;">
+				<div class="col-5" style="margin-bottom: 50px;">
 					<input type="text" name="mb_id" id="mb_id" value="${mb_Id}"
 						disabled>
+						<div class="col-3"></div>
 					<%
 					}
 					%>

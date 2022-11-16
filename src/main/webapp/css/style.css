@@ -243,7 +243,7 @@ a.nav-link.header-logout
    font-size:14px;
    background-color:#1f1f1f!important;
    color:#fff;
-   width: 95px;
+   width: 104px;
 }
 a.nav-link.header-logout:hover
 {
@@ -260,6 +260,19 @@ a.nav-link.header-logout:hover
   a.nav-link.header-logout.main{
   display:none;
   }
+}
+a.nav-link.dropdown-toggle.header-toggle{
+   font-size:18px;
+   font-weight:300;
+   color:#1f1f1f;
+   padding-top:15px;
+   padding-bottom:0px;
+}
+
+@media (max-width: 768px) {
+   a.nav-link.dropdown-toggle.header-toggle{
+      display:none;
+   }
 }
 
 a.nav-link.dropdown-toggle.header-toggle-login::after{

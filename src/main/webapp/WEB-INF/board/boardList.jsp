@@ -22,6 +22,10 @@
 	font-size: 18px;
 	color: black;
 }
+.search:hover {
+background-color:#7832f7 !important;
+color:white;
+}
 </style>
 <script>
 	function getboard(val) {
@@ -39,13 +43,6 @@
 	}
 </script>
 <body>
-<%    
-response.setHeader("Cache-Control","no-store");    
-response.setHeader("Pragma","no-cache");    
-response.setDateHeader("Expires",0);    
-if (request.getProtocol().equals("HTTP/1.1"))  
-        response.setHeader("Cache-Control", "no-cache");  
-%>
 	<div class="board">
 		<h1>공 지 사 항</h1>
 	</div>
@@ -55,7 +52,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 		<form class="form-inline" action="getBoardList" method="post">
 			<input class="form-control mr-sm-2" type="text" name="searchKeyword"
 				placeholder="검색어를 입력하세요">
-			<button class="btn btn-success" type="submit"
+			<button class="btn btn-success search" type="submit"
 				style="border-radius: 4px">검색</button>
 		</form>
 	</nav>
@@ -108,10 +105,10 @@ if (request.getProtocol().equals("HTTP/1.1"))
 		<div id="btnBox">
 			<!-- 반복처리할 태그 시작-->
 			<c:if test="${paging.nowPageBtn > 1 }">
-				<a href="getBoardList?nowPageBtn=1">&laquo;</a>
+				<a href="getBoardList?nowPageBtn=1"><strong>&laquo;</strong></a>
 			</c:if>
 			<c:if test="${paging.nowPageBtn > 1 }">
-				<a href="getBoardList?nowPageBtn=${paging.nowPageBtn -1 }">&lt;</a>
+				<a href="getBoardList?nowPageBtn=${paging.nowPageBtn -1 }"><strong>&lt;</strong></a>
 			</c:if>
 			<c:forEach begin="${paging.startBtn}" end="${paging.endBtn }"
 				step="1" var="i">
@@ -126,7 +123,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 				</c:choose>
 			</c:forEach>
 			<c:if test="${paging.nowPageBtn < paging.totalBtnCnt }">
-				<a href="getBoardList?nowPageBtn=${paging.nowPageBtn +1 }">&gt;</a>
+				<a href="getBoardList?nowPageBtn=${paging.nowPageBtn +1 }"><strong>&gt;</strong></a>
 			</c:if>
 			<c:if test="${paging.nowPageBtn < paging.totalBtnCnt }">
 				<a href="getBoardList?nowPageBtn=${paging.totalBtnCnt}">&raquo;</a>
@@ -134,5 +131,8 @@ if (request.getProtocol().equals("HTTP/1.1"))
 			<!-- 반복처리할 태그 끝 -->
 		</div>
 	</div>
+
+
+</body>
 </body>
 </html>

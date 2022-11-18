@@ -100,7 +100,7 @@ input::-webkit-inner-spin-button {
 /* 목록 */
 .nav-link.header{
    color:#1f1f1f!important;
-   font-weight:300;
+   font-weight:400;
 }
 
 .nav-link.header:hover{
@@ -168,7 +168,21 @@ input::-webkit-inner-spin-button {
    background-color: #7832f7!important;
 }
 
+@media(max-width:768px){
+	.carousel .carousel-item{
+    height: 200px;
+	}
+}
 
+@media(max-width:768px){
+.carousel-item img {
+		position: absolute;
+		top: 0;
+		left: -70px;
+		min-width: 500px;
+		min-height: 190px;
+	}
+}
 /* 헤더검색 시작 */
 .form-control.search{
    border-radius:20px!important;
@@ -214,7 +228,7 @@ input::-webkit-inner-spin-button {
 
 /* 헤더 로그인 시작 */
 ul.nav.navbar-nav.navbar-right {
-  margin-right: -28px;
+  /* margin-right: -28px; */
   
 }
 /* a{color:black !important;} */
@@ -499,9 +513,9 @@ footer {
    padding-left:1%;
 }
 
-.mt-auto{
+.footer-head{
 /*    margin-top:100px!important; */
-   border-top:1px solid #1f1f1f;
+   border-top:1px solid #1f1f1f!important;
 }
 
 .container.footer{
@@ -736,6 +750,7 @@ div.rectangle{
    transform: translate(0, 60%);
 } 
 }
+
 
 /* 예매율 애니메이션 */
 .circular-progress3,.circular-progress2,.circular-progress1{

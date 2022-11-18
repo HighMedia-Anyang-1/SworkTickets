@@ -63,7 +63,6 @@ function getfaq(val){
 
 }
 function f_write(val){
-    console.log(val);
     if(val == ''){
         alert("로그인이 되야 작성 가능합니다");
         location.href="/getFaqList";
@@ -73,7 +72,6 @@ function f_write(val){
 }
 </script>
 <body>
-<div>
 <%    
 response.setHeader("Cache-Control","no-store");    
 response.setHeader("Pragma","no-cache");    
@@ -183,8 +181,8 @@ if (request.getProtocol().equals("HTTP/1.1"))
 										aria-labelledby="headingOne"
 										data-bs-parent="#sidenavAccordion">
 										<nav class="sb-sidenav-menu-nested nav">
-											<a class="nav-link" href="/adminFaqList">공지사항</a> <a
-												class="nav-link" href="/getFaqList">FAQ</a> <a
+											<a class="nav-link" href="/getBoardList">공지사항</a> <a
+												class="nav-link" href="/adminFaqList">FAQ</a> <a
 												class="nav-link" href="/getOneList">1:1 문의</a>
 										</nav>
 									</div>

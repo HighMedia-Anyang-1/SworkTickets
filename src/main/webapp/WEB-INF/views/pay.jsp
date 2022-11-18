@@ -7,7 +7,7 @@
 <head>
 
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>뉴전시스</title>
 <%@ include file="../../header.jsp"%>
 
 
@@ -23,7 +23,6 @@ $(document).ready(function(){
    IMP.init('${impKey}');
    $("#check_module").click(function () {
 	   $('#exh_title').val('${exh_title}')	
-	   console.log($('#exh_title').val());
 	   var formValues = $("form[name=fm]").serialize() ;
       IMP.request_pay({
          pg: 'html5_inicis.INIpayTest', // 자신이 설정한 pg사 설정
@@ -38,9 +37,8 @@ $(document).ready(function(){
          paid_at: $("#p_date").val() ,
 //          buyer_addr: $("#uaddr").val() ,//주소
 //          buyer_postcode: '123-456',//우편번호
-         m_redirect_url: "http://localhost:8090/payUserM?formValues="+formValues//내 url 
+         m_redirect_url: "http://newjeonsis.ml/payUserM?formValues="+formValues//내 url 
          }, function (rsp) {
-            console.log(rsp);
             if (rsp.success) {
                var msg = '결제가 완료되었습니다.';
                $('#p_id').val(rsp.imp_uid);//test
@@ -76,7 +74,6 @@ $(document).ready(function(){
          data : {"mid": $("#merchant_uid").val()},
          method : "POST",
          success : function(val){
-            console.log(val);
             if(val==1) alert("취소 완료");
             else alert("취소 실패\n이미 취소되었거나 잘못된 정보입니다.");
          },
@@ -93,7 +90,6 @@ $(document).ready(function(){
          method : "GET",
          contentType : 'application/json; charset=UTF-8',
          success : function(val){
-            console.log(val);
             $("#paylist").empty();
             if(val.msg!=null){
                $("#paylist").append(val.msg);
@@ -122,7 +118,6 @@ $(document).ready(function(){
          method : "GET",
          contentType : 'application/json; charset=UTF-8',
          success : function(val){
-            console.log(val);
             $("#paylist").empty();
             $.each(val, function(i, v){
                $("#paylist").append("고유ID: "+v.imp_uid);

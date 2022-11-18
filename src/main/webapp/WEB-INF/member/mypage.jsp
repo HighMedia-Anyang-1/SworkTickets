@@ -22,7 +22,6 @@ if (session.getAttribute("mb_Id") == null) {
       var mb_pw = document.getElementById("pw").value;
       var mb_pw2 = document.getElementById("pw2").value;
       var mb_phone = document.getElementById("mb_phone").value;
-      console.log(mb_phone);
       if(mb_pw != mb_pw2) {
             alert("비밀번호가 다릅니다.");
              return false;
@@ -43,10 +42,8 @@ if (session.getAttribute("mb_Id") == null) {
    function quitMember(mb_id) {
       if(confirm('정말 탈퇴하시겠습니까?')){
       if (mb_id != null) {
-         console.log("if문 입니다.");
          location.href = "deleteMember?mb_id=" + mb_id;
       } else {
-         console.log("else문입니다.");
       }
       } else{
          location.href= "mypage";
@@ -97,12 +94,20 @@ input-group mb-3{width: 70% !important;}
 }
 .btn2{
    height: 38px;
-   color: red; 
+   color: red;
    background-color: white; 
    border-color: red; 
    border: solid 1px;
    padding: 3px 10px;
 }
+@media (max-width: 768px) {
+.container{
+width:100% !important;
+margin:0;
+
+}
+}
+
 </style>
 </head>
 <body>
@@ -171,5 +176,6 @@ if (request.getProtocol().equals("HTTP/1.1"))
    </div>
       </form>
 </div>
+<%@ include file="../../footer.jsp"%>
 </body>
 </html>

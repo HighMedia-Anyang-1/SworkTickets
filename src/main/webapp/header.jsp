@@ -30,68 +30,36 @@
       style="width: 140px;" src="./images/logo.png">&nbsp&nbsp
    </a>
 <!-- 햄버거 시작-->
-     
-    <div class="collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav hambuger">
-    
-      <div class="form-group col-xs-6 my-2">
-        <div class="inner-addon right-addon" name="addonHambuger">
-          <i class="glyphicon fas fa-search"></i>
-         <input type="text" class="form-control main" placeholder="검색" name="eSearchKeyword" id="eSearchKeyword" onkeyup="searchkey()" value="${eSearchKeyword }"/>
-          <button style="float:right; position:absolute; background:none; border:none;right:2%;top:2%;" class="searchbtn" onclick="searchkeya()"> <i class="xi-magnifier"></i></button>
-  </div>
-      </div>
-    
-      <li class="nav-item">
-      <c:if test='${mb_Id ne NULL}'>
-        <span class="nav-hello hambuger">${mb_Id}님 안녕하세요</span>
-      </c:if>
-      </li>
-      <li class="nav-item dropdown hambuger">
-      <c:if test='${mb_Id ne NULL}'>
-        <a class="nav-link hambuger" data-toggle="dropdown" role="button" 
-        style="font-size:20px; font-weight:600; color:#1f1f1f;"> 마이페이지 </a>
-        <div class="dropdown-menu header-menu" aria-labelledby="member" style="margin-right:20px;">
-           <a class="dropdown-item header-item" id="memberUpdate" href="mypageView">&nbsp회원수정</a>
-           <a class="dropdown-item header-item" href="/getPayList">&nbsp나의구매내역</a>
-             <a class="dropdown-item header-item" href="/MyCoupon">&nbsp내 쿠폰함</a>
-             <a class="dropdown-item header-item" href="/getMyGoodList">&nbsp내 좋아요 목록</a>
-        </div>
-       </c:if>
-      </li>
-      <li class="nav-item">
-         <a class="nav-link mypage hambuger" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> 마이페이지 </a>            
-      </li>
-      <li class="nav-item" style="margin-top:0px;">
-        <a class="nav-link hambuger" href="/getUserExhibitionList" style="padding-top:0px;" > 전시 </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link hambuger" href="/ranking"> 랭킹 </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link hambuger" href=/local> 지역 </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link hambuger" href=/getCouponList> 쿠폰 </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link hambuger" data-toggle="dropdown" href="/getOneList" role="button" aria-haspopup="true" aria-expanded="false"> 고객센터 </a>
-         <div class="dropdown-menu header-menu" aria-labelledby="cs">
+      <input type="checkbox" id="check_box">
+    <label for="icon">  <!--label은 인라인 스타일-->
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+    <div id="side_menu">
+        <ul>
+            <li class="nav-item dropdown header-title">
+            <a class="nav-link header" href="/getUserExhibitionList" > 전시 </a>
+         </li>
+         <li class="nav-item dropdown header-title">
+            <a class="nav-link header" href="/ranking"> 랭킹 </a>
+         </li>
+         <li class="nav-item dropdown header-title">
+            <a class="nav-link header" href="/local"> 지역 </a>
+         </li>
+         <li class="nav-item dropdown header-title">
+            <a class="nav-link header" href="/getCouponList"> 쿠폰 </a>
+         </li>
+         <li class="nav-item dropdown header-title">
+            <a class="nav-link header" data-toggle="dropdown" href="/getOneList" role="button" aria-haspopup="true" aria-expanded="false"> 고객센터 </a>
+            <div class="dropdown-menu header-menu" aria-labelledby="cs">
                <a class="dropdown-item header-item" href="/getBoardList">공지사항</a>
                <a class="dropdown-item header-item" href="/getFaqList">자주묻는질문</a>
                <a class="dropdown-item header-item" href="/getOneList">1:1 문의</a>
-        </div>
-      </li>
-         
-    </ul>
-    <c:if test='${mb_Id eq NULL}'>
-    <a class="dropdown-item header-item-login hamburger" href="login.jsp" >&nbsp로그인</a>
-    </c:if>
-    
-    <c:if test='${mb_Id ne NULL}'>
-    <a class="nav-link header-logout hamburger" href="/logoutGO" style="margin:10px 268px 0 20px;">로그아웃</a>
-    </c:if>
-  </div>
+            </div>
+         </li>
+        </ul>
+    </div>
 <!--   햄버거 끝 -->
   
    <c:choose>
@@ -99,7 +67,7 @@
       
          <ul class="nav navbar-nav mr-auto ml-3">
          <li class="nav-item dropdown header-title">
-            <a class="nav-link header" href="/getExhibitionList"> 전시 </a>
+            <a class="nav-link header" href="/getUserExhibitionList"> 전시 </a>
          </li>
          <li class="nav-item dropdown header-title">
             <a class="nav-link header" href="/ranking"> 랭킹 </a>
@@ -128,7 +96,7 @@
         <!-- 검색 -->
       <div class="form-group col-xs-6 my-2">
         <div class="inner-addon right-addon main" name="addonMain">
-          <input type="text" class="form-control main" placeholder="검색" name="eSearchKeyword" id="eSearchKeyword" onkeyup="searchkey()" value="${eSearchKeyword }"/>
+          <input type="text" class="form-control main" placeholder="전시검색" name="eSearchKeyword" id="eSearchKeyword" onkeyup="searchkey()" value="${eSearchKeyword }"/>
           <button style="float:right; position:absolute; background:none; border:none;right:2%;top:2%;" class="searchbtn" onclick="searchkeya()"> <i class="xi-magnifier"></i></button>
         </div>
       </div>
@@ -176,13 +144,13 @@
          <!-- 검색 -->
       <div class="form-group col-xs-6 my-2">
         <div class="inner-addon right-addon main" name="addonMain">
-          <input type="text" class="form-control main" placeholder="검색" name="eSearchKeyword" id="eSearchKeyword" onkeyup="searchkey()" value="${eSearchKeyword }"/>
+          <input type="text" class="form-control main" placeholder="전시검색" name="eSearchKeyword" id="eSearchKeyword" onkeyup="searchkey()" value="${eSearchKeyword }"/>
           <button style="float:right; position:absolute; background:none; border:none;right:2%;top:2%;" class="searchbtn" onclick="searchkeya()"> <i class="xi-magnifier"></i></button>
         </div>
       </div>
       <!-- 검색 -->
                <li class="nav-item">
-                     <span class="nav-hello-main">${mb_Id}님 안녕하세요</span>
+                     <%-- <span class="nav-hello-main">${mb_Id}님 안녕하세요</span> --%>
                </li>
                <li class="nav-item dropdown header-title">
                <a class="nav-link mypage" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"> 마이페이지 </a>
@@ -197,7 +165,7 @@
             
                <a class="nav-link header-logout main" href="/logoutGO">로그아웃</a>
       </c:when>
-        <c:when test="${mb_Id ne NULL || mb_Id ne NULL}">
+        <c:when test="${mb_Id ne NULL}">
          <ul class="nav navbar-nav mr-auto ml-3">
          <li class="nav-item dropdown header-title">
             <a class="nav-link header" href="/getUserExhibitionList" > 전시 </a>
@@ -225,7 +193,7 @@
         <!-- 검색 -->
       <div class="form-group col-xs-6 my-2">
         <div class="inner-addon right-addon main" name="addonMain">
-          <input type="text" class="form-control main" placeholder="검색" name="eSearchKeyword" id="eSearchKeyword" onkeyup="searchkey()" value="${eSearchKeyword }"/>
+          <input type="text" class="form-control main" placeholder="전시검색" name="eSearchKeyword" id="eSearchKeyword" onkeyup="searchkey()" value="${eSearchKeyword }"/>
           <button style="float:right; position:absolute; background:none; border:none;right:2%;top:2%;" class="searchbtn" onclick="searchkeya()"> <i class="xi-magnifier"></i></button>
         </div>
       </div>
@@ -272,7 +240,7 @@
         <!-- 검색 -->
       <div class="form-group col-xs-6 my-2">
         <div class="inner-addon right-addon main" name="addonMain">
-          <input type="text" class="form-control main" placeholder="검색" name="eSearchKeyword" id="eSearchKeyword" onkeyup="searchkey()" value="${eSearchKeyword }"/>
+          <input type="text" class="form-control main" placeholder="전시검색" name="eSearchKeyword" id="eSearchKeyword" onkeyup="searchkey()" value="${eSearchKeyword }"/>
           <button style="float:right; position:absolute; background:none; border:none;right:2%;top:2%;" class="searchbtn" onclick="searchkeya()"> <i class="xi-magnifier"></i></button>
         </div>
       </div>
@@ -290,10 +258,8 @@
         </ul>
       </c:otherwise>   
    </c:choose>
-<!--    햄버거 버튼 -->
-     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+
+    
 </nav>
 <script>
 function searchkey() {
@@ -301,15 +267,33 @@ function searchkey() {
 
  // 엔터키가 눌렸을 때 실행하는 반응
     var exs = document.getElementById("eSearchKeyword").value;
-
     location.href="getUserExhibitionList?eSearchKeyword="+exs;
+    
     }
 }
+
+function searchkeyHam() {
+    if (window.event.keyCode == 13) {
+
+ // 엔터키가 눌렸을 때 실행하는 반응
+    var exsHam = document.getElementById("eSearchKeywordHam").value;
+    location.href="getUserExhibitionList?eSearchKeyword="+exsHam;
+    
+    }
+}
+
 function searchkeya() {
-
+	
     var exsu = document.getElementById("eSearchKeyword").value;
-
     location.href="getUserExhibitionList?eSearchKeyword="+exsu;
+    
+}
+
+function searchkeyaHam() {
+	
+    var exsuHam = document.getElementById("eSearchKeywordHam").value;
+    location.href="getUserExhibitionList?eSearchKeyword="+exsuHam;
+    
 }
 
 /* $(document).ready(function(){

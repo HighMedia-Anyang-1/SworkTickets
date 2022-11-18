@@ -10,7 +10,10 @@
 
 a{
   color : black;
-  font-weight: bold;
+<<<<<<< HEAD
+=======
+/*   font-weight: bold; */
+>>>>>>> origin/jin.final
 }
 a:hover {
   color : #7832f7;

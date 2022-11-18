@@ -73,8 +73,8 @@ function is_checked(eno) {//eno=3
 					}
 				},
 				// ajax가 실패했을때 실행됨
-				error :  function(){
-					alert("로그인 하십시오.");
+				error :  function(request,status,message){
+					alert("로그인 후 이용 가능합니다.");
 					
 				}
 		  });
@@ -271,7 +271,13 @@ $(document).ready(function(){
 	 }
 			
 }
-
+		function login1(){
+			var login1Confirm = confirm('로그인 페이지로 이동하시겠습니까?');
+		if (login1Confirm == true) {
+        		location.href ="login.jsp";
+   		 }
+ 	}
+		
 </script>
 <script>
 $(function(){
@@ -326,7 +332,7 @@ textarea {
 		}
 </style>
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100" >
 <div class="container" id="exh_detail" style="text-align:center; padding: 50px 0;">
 	<div class="row">
 	<div class="col-md-5"> 
@@ -341,7 +347,7 @@ textarea {
 		<div class="row" style="line-height: 300%;">
 	<div class="col-3">작가</div> <div class="col-9" id="col">${exhibition.exh_artist}</div>
 	<div class="col-3">관람등급</div> <div class="col-9" id="col"> ${exhibition.exh_rating}</div>
-	<div class="col-3">관람시간</div> <div class="col-9" id="col"> ${exhibition.exh_time}</div>
+	<div class="col-3">관람시간</div> <div class="col-9" id="col" style="word-break: keep-all;"> ${exhibition.exh_time}</div>
 	<div class="col-3">발권정보</div> <div class="col-9" id="col"> ${exhibition.exh_shipping_info}</div>
 	<div class="col-3">수수료</div> <div class="col-9" id="col"><fmt:formatNumber value="${exhibition.exh_fee}" groupingUsed="true" />원</div>
 	<div class="col-3">가격</div> <div class="col-9" id="col1"><fmt:formatNumber value="${exhibition.exh_price}" groupingUsed="true" />원</div>
@@ -378,8 +384,16 @@ textarea {
 			<input type="hidden" name="exh_title" value="${exhibition.exh_title}">
 			<input type="hidden" name="amount" value="${exhibition.exh_price}">
 			<input type="hidden" name="exh_thumbnail" value="${exhibition.exh_thumbnail}">
+			<c:choose>
+				<c:when test="${mb_Id ne null}">
 			<button type="submit" class="btn11">예매하기</button>
+				</c:when>
+				<c:otherwise>
+			<button type="button" class="btn11" onclick='login1()'>예매하기</button>
+				</c:otherwise>
+			</c:choose>
 		</form>
+		
 </div>
 	</div>
 	</div>
@@ -391,14 +405,18 @@ textarea {
     <div class="col tabDiv pt-3 pb-2" id="menu2"><h5>관람후기</h5></div>
     <div class="col tabDiv pt-3 pb-2" id="menu3"><h5>장소정보</h5></div>
   </div>
-  <div id="con1" class="conBox p-3" style="background-color: white; text-align:left !important;"><%@ include file="Information.jsp"%></div>
-  <div id="con2" class="conBox p-3" style="background-color: white; text-align:left !important;"> <%@ include file="reviewwrite.jsp"%></div>
-  <div id="con3" class="conBox p-3" style="background-color: white;"><%@ include file="UserExhibitionLocation.jsp"%></div>
 </div>
 	<br>
 	</div>
+	  <div id="con1" class="conBox" style="background-color: white; text-align:left !important;">
+  	<%@ include file="Information.jsp"%>
+   </div>
+  <div id="con2" class="conBox" style="background-color: white; text-align:left !important;">
+    <%@ include file="reviewwrite.jsp"%>
+    </div>
+  <div id="con3" class="conBox" style="background-color: white;">
+    <%@ include file="UserExhibitionLocation.jsp"%>
+    </div>
 	<br>
-<%-- <%@ include file="../../footer.jsp" %> --%>
 </body>
-
 </html>

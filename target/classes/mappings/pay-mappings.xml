@@ -10,8 +10,8 @@
 <!-- 	</insert> -->
 	
 	<insert id="insertPay">
-		INSERT INTO PAY(P_ID, P_MER, MB_ID, P_DATE, EXH_TITLE, BUYER, BUYER_EMAIL, BUYER_TEL, AMOUNT, EXH_NO, EXH_THUMBNAIL) 
-		VALUES( #{p_id}, #{p_mer}, #{mb_id}, #{p_date}, #{exh_title}, #{buyer}, #{buyer_email}, #{buyer_tel}, #{amount}, #{exh_no}, #{exh_thumbnail})
+		INSERT INTO PAY(P_ID, P_MER, MB_ID, P_DATE, EXH_TITLE, BUYER, BUYER_EMAIL, BUYER_TEL, AMOUNT, EXH_NO, EXH_THUMBNAIL, CB_ID) 
+		VALUES( #{p_id}, #{p_mer}, #{mb_id}, #{p_date}, #{exh_title}, #{buyer}, #{buyer_email}, #{buyer_tel}, #{amount}, #{exh_no}, #{exh_thumbnail}, #{cb_id})
 	</insert>
 
 	<select id="getPayList" resultType="pay">
@@ -47,6 +47,11 @@
 		<if test="searchCondition == 'P_DATE' "> AND p_date LIKE CONCAT('%', #{searchKeyword},'%')</if>
 		
 	</select>
+	
+	<select id="getPay" resultType="pay">
+		SELECT *FROM pay
+		WHERE p_mer=#{p_mer}
+	</select>
 
 	<update id="updatePay">
 		UPDATE Pay
@@ -62,10 +67,12 @@
 		SELECT *, COUNT(p.P_ID)AS rank_cnt from exhibition as e
 		LEFT outer JOIN pay AS p
 		on e.exh_no= p.exh_no
-		WHERE e.EXH_APPROVAL = 1
+		WHERE 1=1
+		AND e.EXH_APPROVAL=1
+		AND e.EXH_END_DATE >= NOW()
 		GROUP BY e.exh_no
 		ORDER BY
-		p.exh_no DESC
+		rank_cnt DESC
 		LIMIT 10;
 
 	</select>
@@ -75,11 +82,10 @@
 		SELECT e.*, COUNT(p.P_ID)AS rank_cnt from exhibition as e
 		LEFT outer JOIN pay AS p
 		on e.exh_no= p.exh_no
-		WHERE e.EXH_APPROVAL = 1
+		WHERE 1=1
+		AND e.EXH_APPROVAL=1
+		AND e.EXH_END_DATE >= NOW()
 		GROUP BY e.exh_no
-		ORDER BY
-		p.exh_no DESC
-		LIMIT 10
 		)a;
 	</select>
 

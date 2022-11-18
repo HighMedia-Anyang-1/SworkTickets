@@ -30,7 +30,11 @@ body {
     z-index: 999;
 }
 
-
+.rank_ex {
+   text-align: center;
+   position: relative;
+   margin-bottom: 3.5rem;
+}
 .row{
    width:100%!important;
 }
@@ -184,6 +188,96 @@ input::-webkit-inner-spin-button {
 	}
 }
 /* 헤더검색 시작 */
+
+/* 햄버거 시작 */
+ #check_box {
+  display: none;
+}
+#check_box + label {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+#check_box + label {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+#check_box + label > span {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: gray;
+  border-radius: 2px;
+  transition: all 300ms;
+}
+
+#check_box:checked + label > span:nth-child(1) {
+  top: 50%;
+  transform: translate(0, -50%);
+  transform: rotate(45deg);
+}
+
+#check_box + label > span:nth-child(2) {
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+#check_box:checked + label > span:nth-child(2) {
+  opacity: 0;
+}
+
+#check_box + label > span:nth-child(3) {
+  bottom: 0;
+}
+
+#check_box:checked + label > span:nth-child(3) {
+  top: 50%;
+  transform: translate(0, -50%);
+  transform: rotate(-45deg);
+}
+
+
+/* ------------ */
+
+#check_box + label {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 15px;
+  cursor: pointer;
+  color: gray;
+  /* z-index 추가 */
+  z-index: 2;
+}
+
+#side_menu {
+  position: relative;
+  width: 300px;
+  height: 100%;
+  background-color: white;
+  left: -300px;
+  transition: all 300ms;
+  z-index: 1;
+  top: 0px;
+  padding: 60px 20px 20px 20px;
+  box-sizing: border-box;
+}
+
+#check_box:checked + label + #side_menu {
+  left: 0;
+}
+
+
+/* 햄버거 끝 */
+
 .form-control.search{
    border-radius:20px!important;
    border: 2px solid #7832f7!important;
@@ -254,7 +348,7 @@ a.nav-link.header-logout
 {   
    padding:7px 20px 7px 20px;
    margin-right:7px;
-   font-size:14px;
+   font-size:16px;
    background-color:#1f1f1f!important;
    color:#fff;
    width: 104px;
@@ -291,20 +385,6 @@ a.nav-link.dropdown-toggle.header-toggle{
 
 a.nav-link.dropdown-toggle.header-toggle-login::after{
    content:inherit;
-}
-
-a.nav-link.dropdown-toggle.header-toggle{
-	font-size:18px;
-	font-weight:300;
-	color:#1f1f1f;
-	padding-top:15px;
-	padding-bottom:0px;
-}
-
-@media (max-width: 768px) {
-	a.nav-link.dropdown-toggle.header-toggle{
-		display:none;
-	}
 }
 
 .nav-link.mypage{
@@ -379,7 +459,7 @@ a.nav-link.dropdown-toggle.header-toggle{
    position:relative;
    display: inline-block;
    text-align: center;
-    height: 3000px;
+    height: 2800px;
     line-height: 100px;
 }
 
@@ -751,42 +831,3 @@ div.rectangle{
 } 
 }
 
-
-/* 예매율 애니메이션 */
-.circular-progress3,.circular-progress2,.circular-progress1{
-  position: relative;
-  height: 90px;
-  width: 90px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-}
-.circular-progress3:before,.circular-progress2:before,.circular-progress1:before{
-  content: "";
-  position: absolute;
-  height: 80%;
-  width: 80%;
-  background-color: #ffffff;
-  border-radius: 50%;
-}
-.value-container3,.value-container2,.value-container1{
-  position: relative;
-  /* font-family: "Poppins", sans-serif; */
-  font-weight: bold;
-  font-size: 20px;
-  color: #231c3d;
-}
-
-
-/* 카운팅 효과 */
-span.num {
-  color: #000000;
-/*   display: grid; */
-  place-items: center;
-/*   font-weight: 550; */
-  font-size: 1.3em;
-}
-.bi-suit-heart-fill {
-   font-size: 1.3rem; 
-   color: #f90b57;"
-}

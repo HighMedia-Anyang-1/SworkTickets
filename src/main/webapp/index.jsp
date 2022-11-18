@@ -220,6 +220,7 @@ body, html {
 <link rel="stylesheet" href="./css/owl.carousel.css">
 <link rel="stylesheet" href="./css/owl.theme.default.css">
 
+
 </head>
 <body class="d-flex flex-column min-vh-100">
    <!-- <img class="picture" src="./images/main_image.png" /> -->

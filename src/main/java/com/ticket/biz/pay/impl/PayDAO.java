@@ -20,8 +20,13 @@ public class PayDAO {
 			public void insertPay(PayVO vo) {
 				mybatis.insert("PayDAO.insertPay",vo);
 			}
+			// 취소 여부
 			public void updatePay(PayVO vo) {
 				mybatis.update("PayDAO.updatePay",vo);
+			}
+			// 관람여부
+			public void updatePay1(PayVO vo) {
+				mybatis.update("PayDAO.updatePay1",vo);
 			}
 
 			public void deletePay(PayVO vo) {
@@ -48,6 +53,10 @@ public class PayDAO {
 			//예매 전체 카운트
 			public int getPayCnt() {
 				return mybatis.selectOne("PayDAO.getPayCnt");
+			}
+			//리뷰 예매 체크
+			public int reviewPayCheck(PayVO vo) {
+				return mybatis.selectOne("PayDAO.reviewPayCheck",vo);
 			}
 
 }

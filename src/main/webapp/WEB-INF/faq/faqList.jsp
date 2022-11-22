@@ -71,7 +71,7 @@ body {
   <!-- For demo purpose -->
   <div class="row py-5">
     <div class="col-lg-9 mx-auto text-white text-center" style="margin-left:300px;" >
-      <h2 class="display-4" style="color:black !important; font-size:50px">자주 묻는 질문</h2>
+      <h1 class="display-4" style="color:black !important; margin-left:20px;">자주 묻는 질문</h1>
     </div>
   </div>
 
@@ -85,7 +85,7 @@ body {
         <!-- Accordion item 1 -->
         <div class="card">
           <div id="headingTwo" class="card-header bg-white shadow-sm border-0" style="border-radius:5px; padding:20px;" >
-            <h6 class="mb-0 font-weight-bold" style="text-decoration:none;" ><a href="#" data-toggle="collapse" data-target="#collapseTwo${faq.faq_no }" aria-expanded="false" aria-controls="collapseTwo" class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2" >${faq.faq_title }</a></h6>
+            <h6 class="mb-0 font-weight-bold"><a href="#" data-toggle="collapse" style="text-decoration: none;" data-target="#collapseTwo${faq.faq_no }" aria-expanded="false" aria-controls="collapseTwo" class="d-block position-relative collapsed text-dark text-uppercase collapsible-link py-2">${faq.faq_title }</a></h6>
           </div>
           <div id="collapseTwo${faq.faq_no }" aria-labelledby="headingTwo" data-parent="#accordionExample" class="collapse">
             <div class="card-body p-5">

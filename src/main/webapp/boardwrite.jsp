@@ -131,7 +131,7 @@
 										data-bs-parent="#sidenavAccordion">
 										<nav class="sb-sidenav-menu-nested nav">
 											<a class="nav-link" href="/getBoardList">공지사항</a> <a
-												class="nav-link" href="/getFaqList">FAQ</a> <a
+												class="nav-link" href="/adminFaqList">FAQ</a> <a
 												class="nav-link" href="/getOneList">1:1 문의</a>
 										</nav>
 									</div>
@@ -175,7 +175,7 @@
 					<label for="exh_content" class="input-group-text"style="padding-left: 18px; padding-right: 18px;" >내 용</label>
 				</div>
 				<textarea class="form-control" rows="10" id="comment"
-					id="noti_content" name="noti_content" placeholder="내용을 입력해주세요." required></textarea>
+					id="noti_content" name="noti_content" placeholder="내용을 입력해주세요." required style="resize: none;"></textarea>
 			</div>
 			
 

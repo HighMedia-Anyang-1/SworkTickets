@@ -12,7 +12,7 @@ public class PayVO {
 	private int amount;//가격
 	private int p_chk; // 환불 유무
 	private int exh_no; // 전시 번호
-	private String exh_end_date; // 종료 날짜
+	private String exh_st_date; // 종료 날짜
 	private String exh_thumbnail; // 전시 썸네일
 
 	private String searchCondition;
@@ -20,20 +20,26 @@ public class PayVO {
 
 	private int offset;
 
-
+	private int cb_id;//쿠폰번호
 	
 
+	public int getCb_id() {
+		return cb_id;
+	}
+	public void setCb_id(int cb_id) {
+		this.cb_id = cb_id;
+	}
 	public String getExh_thumbnail() {
 		return exh_thumbnail;
 	}
 	public void setExh_thumbnail(String exh_thumbnail) {
 		this.exh_thumbnail = exh_thumbnail;
 	}
-	public String getExh_end_date() {
-		return exh_end_date;
+	public String getExh_st_date() {
+		return exh_st_date;
 	}
-	public void setExh_end_date(String exh_end_date) {
-		this.exh_end_date = exh_end_date;
+	public void setExh_st_date(String exh_st_date) {
+		this.exh_st_date = exh_st_date;
 	}
 	public String getSearchCondition() {
 		return searchCondition;

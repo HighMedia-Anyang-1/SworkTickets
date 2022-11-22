@@ -221,7 +221,7 @@ pageContext.setAttribute("replaceChar", "\n");
             $('#con2').load(location.href + '#con2');
             $(".tabDiv").eq(1).click();	
    } else {
-      alert('로그인 이후 이용해주시기 바랍니다.');
+      alert(' 댓글은, 해당 전시회 예매 후 이용하실수 있습니다.');
    }
    },
       error:function(){

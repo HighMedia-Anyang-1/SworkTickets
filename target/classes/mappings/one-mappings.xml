@@ -29,6 +29,7 @@
 		SELECT * FROM ONEONE WHERE 1=1 
 		
 		<if test="searchKeyword !=null">
+		
 	
 		AND
 	     REPLACE(UPPER(ONE_TITLE),' ','')
@@ -40,6 +41,12 @@
          REPLACE(CONCAT('%',(UPPER(#{searchKeyword})),'%'),' ','')
          
 		</if>
+		
+<!-- 		<if test="one_secret !=0"> -->
+					
+<!-- 		AND  -->
+<!-- 		REPLACE(CONCAT(#{one_writer})) -->
+<!-- 		</if>  -->
          ORDER BY ONE_NO DESC
 		LIMIT 10 OFFSET #{offset}
 		

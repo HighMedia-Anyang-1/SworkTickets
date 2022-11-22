@@ -72,6 +72,8 @@ color:white !important;
 
 <div class="regBtn" style="margin-top:40px; text-align:center;">
 <button class="btn btn-success"  style="cursor: pointer;">글 등록</button>
+<div class="regBtn" style="margin-top:40px; text-align:center;">
+<button class="btn btn-success"  style="cursor: pointer;">글 목록</button>
 </div>
 </div>
 </form>

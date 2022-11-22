@@ -31,12 +31,14 @@ public class ReviewController {
 	@ResponseBody
 	@RequestMapping("/insertReview")
 	public String ReviewInsert(@RequestBody ReviewVO vo,HttpSession session, Model model) {
+		System.out.println("쿠오오오오오!!!!!!!!");
 		if(session.getAttribute("mb_Id") == null) {
 			return "fail";
 		} else {
 			
 			reviewservice.insertReview(vo);
 			model.addAttribute("reviewmodel", vo);
+			System.out.println("쿠오오오오");
 			return "InsertSuccess";
 		}
 	}

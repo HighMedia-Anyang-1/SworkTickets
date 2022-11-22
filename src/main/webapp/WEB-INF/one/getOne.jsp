@@ -246,7 +246,7 @@ margin:5px;
             <button type="button" class="btn btn-success t"  onclick="location.href='getOneList';">글목록</button></a>
 			
 			
-		<c:if test="${one.one_writer eq mb_Id or admin}">			
+		<c:if test="${mb_Id eq one.one_writer or 'admin'}">			
             <button class="btn btn-success t" <%=sts%>>글수정</button>
             <button  type="button" class="btn btn-success t" onclick="deleteone(${one.one_no},`${one.one_writer}`)"  <%=sts%> >글삭제</button>
 

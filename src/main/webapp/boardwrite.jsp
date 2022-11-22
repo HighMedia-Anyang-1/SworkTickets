@@ -168,7 +168,7 @@
 					<label for="exh_cs_phone" class="input-group-text" style="padding-left: 20px; padding-right: 20px;">제목</label>
 				</div>
 				<input type="text" class="form-control innm" id="exh_cs_phone"
-					name="noti_title" value="제목을 작성해주세요" required>
+					name="noti_title" placeholder="제목을 작성해주세요" required>
 			</div>
 			<div class="input-group mb-3">
 				<div class="input-group-prepend">

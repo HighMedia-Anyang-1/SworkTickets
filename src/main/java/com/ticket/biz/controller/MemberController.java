@@ -253,9 +253,12 @@ public class MemberController {
 		System.out.println("테스트222"+request.getParameter("mb_email"));
 		System.out.println("test"+ memberService.find(vo));	
 		if (memberService.find(vo) != null) {
+			System.out.println("테스트33333333333");
 			model.addAttribute("memberList", memberService.find(vo));
+			System.out.println("테스트444444444");
 			return "views/findPw";
 		} else {
+			System.out.println("테스트55555555");
 			return "views/findPw";
 		}
 	}
@@ -278,11 +281,11 @@ public class MemberController {
 		System.out.println(request.getParameter("mb_email"));
 		System.out.println("패스워드111111111:"+vo.getMb_pw());
 		String password = pwCheck.encrypt(vo.getMb_pw());
-		vo.setMb_id((String)request.getParameter("mb_id")); 
+		vo.setMb_id(request.getParameter("mb_id")); 
 		vo.setMb_pw(password);
 		System.out.println("vo:"+vo.toString());
 		System.out.println("패스워드22222222:"+password);
-		vo.setMb_email((String)request.getParameter("mb_email"));
+		vo.setMb_email(request.getParameter("mb_email"));
 
 		int a = memberService.change(vo);
 		System.out.println(a);
